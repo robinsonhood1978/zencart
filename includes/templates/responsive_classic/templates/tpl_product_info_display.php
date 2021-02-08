@@ -227,11 +227,14 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
         <div id="productModelMsg" class="productGeneral biggerText"><?php echo stripslashes($products_model_msg); ?></div>
     <?php } ?>
     <div class="a" id="ajaxModel"></div>
+
 		<div class="limiter">
+            <div id="model_table" class="table">
+            </div>
             <div class="container-table100">
+
                 <div class="wrap-table100">
-                    <div id="model_table" class="table">
-					</div>
+
 
                 </div>
             </div>

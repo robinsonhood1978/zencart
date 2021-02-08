@@ -14,7 +14,7 @@
 /**
  * Enter the domain for your Admin URL. If you have SSL, enter the correct https address in the HTTP_SERVER setting, instead of just an http address.
  */
-define('HTTP_SERVER', 'https://www.sparepartsforlaptop.com.au');
+define('HTTP_SERVER', 'http://localhost');
 /**
  * Note about HTTPS_SERVER:
  * There is no longer an HTTPS_SERVER setting for the Admin. Instead, put your SSL URL in the HTTP_SERVER setting above.
@@ -30,8 +30,8 @@ define('HTTP_SERVER', 'https://www.sparepartsforlaptop.com.au');
  * Enter the domain for your storefront URL.
  * Enter a separate SSL URL in HTTPS_CATALOG_SERVER if your store supports SSL.
  */
-define('HTTP_CATALOG_SERVER', 'http://www.sparepartsforlaptop.com.au');
-define('HTTPS_CATALOG_SERVER', 'https://www.sparepartsforlaptop.com.au');
+define('HTTP_CATALOG_SERVER', 'http://localhost');
+define('HTTPS_CATALOG_SERVER', 'https://localhost');
 
 /**
  * Do you use SSL for your customers login/checkout on the storefront? If so, enter 'true'. Else 'false'.
@@ -50,7 +50,7 @@ define('DIR_WS_HTTPS_CATALOG', '/');
  * This is the complete physical path to your store's files.  eg: /var/www/vhost/accountname/public_html/store/
  * Should have a closing / on it.
  */
-define('DIR_FS_CATALOG', '/var/www/html/');
+define('DIR_FS_CATALOG', 'D:/phpstudy_pro/html/');
 
 /**
  * NOTE about DIR_FS_ADMIN

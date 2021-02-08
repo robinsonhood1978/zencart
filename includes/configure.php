@@ -15,8 +15,8 @@
  * HTTP_SERVER is your Main webserver: eg-http://www.yourdomain.com
  * HTTPS_SERVER is your Secure/SSL webserver: eg-https://www.yourdomain.com
  */
-define('HTTP_SERVER', 'https://www.sparepartsforlaptop.com.au');
-define('HTTPS_SERVER', 'https://www.sparepartsforlaptop.com.au');
+define('HTTP_SERVER', 'http://localhost');
+define('HTTPS_SERVER', 'https://localhost');
 
 /**
  *  If you want to tell Zen Cart to use your HTTPS URL on sensitive pages like login and checkout, set this to 'true'. Otherwise 'false'. (Keep the quotes)
@@ -35,7 +35,7 @@ define('DIR_WS_HTTPS_CATALOG', '/');
  * This is the complete physical path to your store's files.  eg: /var/www/vhost/accountname/public_html/store/
  * Should have a closing / on it.
  */
-define('DIR_FS_CATALOG', '/var/www/html/');
+define('DIR_FS_CATALOG', 'D:/phpstudy_pro/html/');
 
 /**
  * The following settings define your database connection.

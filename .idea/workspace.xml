@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="" />
+    <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/configure.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/configure.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/configure.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/configure.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/common/tpl_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/common/tpl_footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_product_info_display.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_product_info_display.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +20,11 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1m4K7bpqS2rpjSeGYTt5yGOYCSo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Scalp-zzF-Serve" />
@@ -178,10 +189,33 @@
       <workItem from="1611772984161" duration="1737000" />
       <workItem from="1611774829354" duration="494000" />
       <workItem from="1611818281118" duration="1686000" />
+      <workItem from="1612688547368" duration="1670000" />
+      <workItem from="1612690378534" duration="1336000" />
+      <workItem from="1612721193291" duration="1685000" />
+      <workItem from="1612723055072" duration="1697000" />
+      <workItem from="1612724872374" duration="930000" />
+      <workItem from="1612727754443" duration="1089000" />
+      <workItem from="1612772922589" duration="1734000" />
+      <workItem from="1612774842606" duration="1728000" />
+      <workItem from="1612776690813" duration="1715000" />
+      <workItem from="1612778730855" duration="714000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
