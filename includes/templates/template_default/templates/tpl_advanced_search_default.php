@@ -13,7 +13,7 @@
 ?>
 <div class="centerColumn" id="advSearchDefault">
 
-<?php echo zen_draw_form('advanced_search', zen_href_link(FILENAME_ADVANCED_SEARCH_RESULT, '', $request_type, false), 'get', 'onsubmit="return check_form(this);"') . zen_hide_session_id(); ?>
+<?php echo zen_draw_form('filter', zen_href_link(FILENAME_ADVANCED_SEARCH_RESULT, '', $request_type, false), 'get', '') . zen_hide_session_id(); ?>
 <?php echo zen_draw_hidden_field('main_page', FILENAME_ADVANCED_SEARCH_RESULT); ?>
 
 <h1 id="advSearchDefaultHeading"><?php echo HEADING_TITLE_1; ?></h1>
@@ -111,7 +111,6 @@
    <br>
     <div style="text-align:right;">
         <button id="back" class="button button-pill button-primary button-small">Back</button>
-        <button id="filter" class="button button-pill button-primary button-small">Search</button>
     </div>
 
 </form>

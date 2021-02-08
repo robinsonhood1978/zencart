@@ -368,17 +368,24 @@ if (in_array($current_page_base,explode(",",'popup_image,popup_image_additional'
 
               });
               $('#model_brand').change(function(){
-                  changeSeries('');
-
+                  //changeSeries('');
+                  $('form[name="filter"]').submit();
               });
 
               $('#model_series').change(function(){
-                  let mseries = $('#model_series').val();
-                  changeModel('',mseries);
+                  //let mseries = $('#model_series').val();
+                  //changeModel('',mseries);
+                  $('form[name="filter"]').submit();
+              });
+              $('#models').change(function(){
+                  $('form[name="filter"]').submit();
               });
 
               $('#pbrand').change(function(){
-                  changePart('');
+                  $('form[name="filter"]').submit();
+              });
+              $('#parts').change(function(){
+                  $('form[name="filter"]').submit();
               });
           });
       </script>

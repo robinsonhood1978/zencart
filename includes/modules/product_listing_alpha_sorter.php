@@ -122,7 +122,7 @@ if (!defined('IS_ADMIN_FLAG')) {
                             </select>
                     </div>
                     <div class="cell">
-                        <button id="filter" class="button button-pill button-primary button-small">Go</button>
+
                     </div>
                 </div>
 
