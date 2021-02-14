@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/modules/product_listing_alpha_sorter.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/product_listing_alpha_sorter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/common/html_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/common/html_header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_advanced_search_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_advanced_search_default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/define_pages_editor.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/define_pages_editor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/product/collect_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/product/collect_info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/languages/english/html_includes/responsive_classic/define_shippinginfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/html_includes/responsive_classic/define_shippinginfo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/languages/english/meta_tags.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/meta_tags.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/common/tpl_footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/common/tpl_footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_product_info_display.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_product_info_display.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_site_map_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_site_map_default.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,6 +204,21 @@
       <workItem from="1612778730855" duration="1726000" />
       <workItem from="1612780578368" duration="1949000" />
       <workItem from="1612783217606" duration="636000" />
+      <workItem from="1612863962963" duration="77000" />
+      <workItem from="1613197876252" duration="590000" />
+      <workItem from="1613201074688" duration="268000" />
+      <workItem from="1613204847768" duration="2026000" />
+      <workItem from="1613207043764" duration="1715000" />
+      <workItem from="1613208885284" duration="1724000" />
+      <workItem from="1613211608097" duration="921000" />
+      <workItem from="1613247222261" duration="1699000" />
+      <workItem from="1613249137426" duration="1301000" />
+      <workItem from="1613251736958" duration="681000" />
+      <workItem from="1613261515619" duration="1659000" />
+      <workItem from="1613263303796" duration="1297000" />
+      <workItem from="1613266530884" duration="1654000" />
+      <workItem from="1613268960221" duration="1639000" />
+      <workItem from="1613271174819" duration="60000" />
     </task>
     <servers />
   </component>

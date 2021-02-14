@@ -14,10 +14,10 @@ function zen_display_files() {
     $dir_check = $check_directory[$i];
 
     if ($dir = @dir($dir_check)) {
-      while ($file = $dir->read()) {
-        if (!is_dir($dir_check . $file)) {
-          if (preg_match('~^[^\._].*\.php$~i', $file) > 0) {
-            $directory_array[] = $file;
+      while ($edit_file = $dir->read()) {
+        if (!is_dir($dir_check . $edit_file)) {
+          if (preg_match('~^[^\._].*\.php$~i', $edit_file) > 0) {
+            $directory_array[] = $edit_file;
           }
         }
       }
@@ -55,7 +55,8 @@ if ($action == 'new_page') {
 }
 
 // define template specific file name defines
-$file = zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/html_includes/', isset($_GET['filename']) ? $_GET['filename'] : '', 'false');
+$edit_file = zen_get_file_directory(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language'] . '/html_includes/', isset($_GET['filename']) ? $_GET['filename'] : '', 'false');
+
 ?>
 <?php
 if (empty($_GET['action'])) {
@@ -69,17 +70,17 @@ switch ($_GET['action']) {
     break;
   case 'save':
     if (($_GET['lngdir']) && ($_GET['filename'])) {
-      if (file_exists($file)) {
-        if (file_exists('bak' . $file)) {
-          @unlink('bak' . $file);
+      if (file_exists($edit_file)) {
+        if (file_exists('bak' . $edit_file)) {
+          @unlink('bak' . $edit_file);
         }
-        @rename($file, 'bak' . $file);
-        $new_file = fopen($file, 'w');
+        @rename($edit_file, 'bak' . $edit_file);
+        $new_file = fopen($edit_file, 'w');
         $file_contents = stripslashes($_POST['file_contents']);
         fwrite($new_file, $file_contents, strlen($file_contents));
         fclose($new_file);
       }
-      zen_record_admin_activity('Define-Page-Editor was used to save changes to file ' . $file, 'info');
+      zen_record_admin_activity('Define-Page-Editor was used to save changes to file ' . $edit_file, 'info');
       zen_redirect(zen_href_link(FILENAME_DEFINE_PAGES_EDITOR));
     }
     break;
@@ -102,6 +103,7 @@ for ($i = 0, $n = sizeof($languages); $i < $n; $i++) {
 if (!$lng_exists) {
   $_SESSION['language'] = $language;
 }
+
 ?>
 <!doctype html>
 <html <?php echo HTML_PARAMS; ?>>
@@ -121,11 +123,15 @@ if (!$lng_exists) {
           }
       }
     </script>
-    <?php if ($editor_handler != '') include ($editor_handler); ?>
+    <?php 
+    if ($editor_handler != '') include ($editor_handler);
+    ?>
   </head>
   <body onLoad="init()">
     <!-- header //-->
-    <?php require(DIR_WS_INCLUDES . 'header.php'); ?>
+    <?php
+    require(DIR_WS_INCLUDES . 'header.php');
+    ?>
     <!-- header_eof //-->
 
     <!-- body //-->
@@ -134,6 +140,7 @@ if (!$lng_exists) {
       <div class="row">
         <div class="col-sm-4 col-md-4">
             <?php
+            
             $check_directory = array();
             $check_directory[] = DIR_FS_CATALOG . DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/';
             $directory_files = zen_display_files();
@@ -168,21 +175,22 @@ if (!$lng_exists) {
       <?php
 // show editor
       if (isset($_GET['filename'])) {
+          
         ?>
         <?php
         if ($_SESSION['language'] && $_GET['filename']) {
-          if (file_exists($file) && $file_array = @file($file)) {
+          if (file_exists($edit_file) && $file_array = @file($edit_file)) {
             $file_contents = implode('', $file_array);
 
             $file_writeable = true;
-            if (!is_writeable($file)) {
+            if (!is_writeable($edit_file)) {
               $file_writeable = false;
               $messageStack->reset();
-              $messageStack->add(sprintf(ERROR_FILE_NOT_WRITEABLE, $file), 'error');
+              $messageStack->add(sprintf(ERROR_FILE_NOT_WRITEABLE, $edit_file), 'error');
               echo $messageStack->output();
             }
             ?>
-            <div class="row"><strong><?php echo TEXT_INFO_CAUTION . '<br /><br />' . TEXT_INFO_EDITING . '<br />' . $file . '<br />'; ?></strong></div>
+            <div class="row"><strong><?php echo TEXT_INFO_CAUTION . '<br /><br />' . TEXT_INFO_EDITING . '<br />' . $edit_file . '<br />'; ?></strong></div>
             <div class="row">
                 <?php echo zen_draw_form('language', FILENAME_DEFINE_PAGES_EDITOR, 'lngdir=' . $_SESSION['language'] . '&filename=' . $_GET['filename'] . '&action=save'); ?>
               <div class="col-sm-6"><?php echo zen_draw_textarea_field('file_contents', 'soft', '100%', '30', htmlspecialchars($file_contents, ENT_COMPAT, CHARSET, TRUE), (($file_writeable) ? '' : 'readonly') . ' class="editorHook form-control"'); ?>
@@ -208,7 +216,7 @@ if (!$lng_exists) {
             <?php
           } else {
             ?>
-            <div class="row"><strong><?php echo sprintf(TEXT_FILE_DOES_NOT_EXIST, $file); ?></strong></div>
+            <div class="row"><strong><?php echo sprintf(TEXT_FILE_DOES_NOT_EXIST, $edit_file); ?></strong></div>
             <div class="row"><?php echo zen_draw_separator('pixel_trans.gif', '1', '10'); ?></div>
             <div class="row"><a href="<?php echo zen_href_link($_GET['filename'], 'lngdir=' . $_SESSION['language']); ?>" class="btn btn-default" role="button"><?php echo IMAGE_BACK; ?></a></div>
             <?php
@@ -224,9 +232,9 @@ if (!$lng_exists) {
                       $dir = dir(DIR_FS_CATALOG_LANGUAGES . $_SESSION['language']);
                       $left = false;
                       if ($dir) {
-                        while ($file = $dir->read()) {
-                          if (preg_match('~^[^\._].*\.php$~i', $file) > 0) {
-                            echo '                <td class="smallText"><a href="' . zen_href_link($_GET['filename'], 'lngdir=' . $_SESSION['language'] . '&filename=' . $file) . '">' . $file . '</a></td>' . "\n";
+                        while ($edit_file = $dir->read()) {
+                          if (preg_match('~^[^\._].*\.php$~i', $edit_file) > 0) {
+                            echo '                <td class="smallText"><a href="' . zen_href_link($_GET['filename'], 'lngdir=' . $_SESSION['language'] . '&filename=' . $edit_file) . '">' . $edit_file . '</a></td>' . "\n";
                             if (!$left) {
                               echo '              </tr>' . "\n" .
                               '              <tr>' . "\n";

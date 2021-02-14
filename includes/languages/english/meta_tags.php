@@ -7,10 +7,10 @@
  */
 
 // page title
-define('TITLE', 'Zen Cart!');
+define('TITLE', 'Spareparts for laptop');
 
 // Site Tagline
-define('SITE_TAGLINE', 'The Art of E-commerce');
+define('SITE_TAGLINE', 'by Fortech Services Pty LtdPowered by');
 
 // Custom Keywords
 define('CUSTOM_KEYWORDS', 'ecommerce, open source, shop, online shopping, store');

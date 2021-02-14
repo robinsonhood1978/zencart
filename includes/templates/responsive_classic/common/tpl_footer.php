@@ -22,27 +22,10 @@ require(DIR_WS_MODULES . zen_get_module_directory('footer.php'));
 if (!isset($flag_disable_footer) || !$flag_disable_footer) {
 ?>
 
-<!--bof-navigation display -->
-<div id="navSuppWrapper">
-<div id="navSupp">
-<ul>
-<li><?php echo '<a href="' . HTTP_SERVER . DIR_WS_CATALOG . '">'; ?><?php echo HEADER_TITLE_CATALOG; ?></a></li>
-<?php if (EZPAGES_STATUS_FOOTER == '1' or (EZPAGES_STATUS_FOOTER == '2' && zen_is_whitelisted_admin_ip())) { ?>
-<?php require($template->get_template_dir('tpl_ezpages_bar_footer.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_ezpages_bar_footer.php'); ?>
-<?php } ?>
-</ul>
-</div>
-</div>
-<!--eof-navigation display -->
+
 
 <!--bof-ip address display -->
-<?php
-if (SHOW_FOOTER_IP == '1') {
-?>
-<div id="siteinfoIP"><?php echo TEXT_YOUR_IP_ADDRESS . '  ' . $_SERVER['REMOTE_ADDR']; ?></div>
-<?php
-}
-?>
+
 <!--eof-ip address display -->
 
 <!--bof-banner #5 display -->
@@ -58,8 +41,14 @@ if (SHOW_FOOTER_IP == '1') {
 <!--eof-banner #5 display -->
 
 <!--bof- site copyright display -->
-<div id="siteinfoLegal" class="legalCopyright"><?php echo FOOTER_TEXT_BODY; ?></div>
-<!--eof- site copyright display -->
+    <div class="footertop">
+            &nbsp;&nbsp;</div>
+    <div class="footer">
+            <div class="footerbottom">Copyright © 2008-2021, <a href="http://www.laptopskeyboard.com.au" target="_blank">LaptopsKeyboard.Com.Au</a>, All Rights Reserved. A division of Fortech Computer &amp; Network.<br><br><img src="/includes/templates/responsive_classic/images/paypal-logo2.jpg">
+            </div>
+    </div>
+
+    <!--eof- site copyright display -->
 
 <?php
 } // flag_disable_footer
@@ -114,13 +103,21 @@ if (SHOW_FOOTER_IP == '1') {
     function getSeries(child){
         var str = '';
 
-        for(var i = 0; i < child.length; i=i+2){
-            let body = '<td width="25%" nowrap=""><div id="series_'+i+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part0]</div></td>' +
-                '<td width="25%" nowrap=""><div id="series_'+(i+1)+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part1]</div></td>';
+        for(var i = 0; i < child.length; i=i+4){
+            let body = '<tr width="100%">' +
+                '<td width="25%" nowrap=""><div id="series_'+i+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part0]</div></td>' +
+                '<td width="25%" nowrap=""><div id="series_'+(i+1)+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part1]</div></td>' +
+                '<td width="25%" nowrap=""><div id="series_'+(i+2)+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part2]</div></td>' +
+                '<td width="25%" nowrap=""><div id="series_'+(i+3)+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part3]</div></td>' +
+                '</tr>';
             let name0 = (child[i]==null)?'':child[i].name;
             let name1 = (child[i+1]==null)?'':child[i+1].name;
+            let name2 = (child[i+2]==null)?'':child[i+2].name;
+            let name3 = (child[i+3]==null)?'':child[i+3].name;
             body = body.replaceAll('[part0]',name0);
             body = body.replaceAll('[part1]',name1);
+            body = body.replaceAll('[part2]',name2);
+            body = body.replaceAll('[part3]',name3);
             str += body;
         }
         return str;
@@ -131,12 +128,10 @@ if (SHOW_FOOTER_IP == '1') {
 
         table += '<table width="100%">\n' +
             '<tbody>\n' +
-            '<tr width="100%"><td width="25%"><li><font color="green"><b>'+str['name']+'</b></font></li></td></tr>\n' +
-            '<tr width="100%">\n';
+            '<tr width="100%"><td width="25%"><li><font color="green"><b>'+str['name']+'</b></font></li></td></tr>' ;
         let series = getSeries(str['child']);
         table += series;
-        table += '</tr>\n' +
-            '</tbody>\n' +
+        table += '</tbody>\n' +
             '</table>';
 
 		for(let i = 0; i < str['child'].length; i++){

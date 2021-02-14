@@ -74,27 +74,57 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
 <!--bof Product Price block -->
 <!--bof Product details list  -->
 <?php if ( (($flag_show_product_info_model == 1 and $products_model != '') or ($flag_show_product_info_weight == 1 and $products_weight !=0) or ($flag_show_product_info_quantity == 1) or ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name))) ) { ?>
-<ul id="productDetailsList">
-  <?php echo (($flag_show_product_info_model == 1 and $products_model !='') ? '<li>' . TEXT_PRODUCT_MODEL . $products_model . '</li>' : '') . "\n"; ?>
-  <?php echo (($flag_show_product_info_quantity == 1) ? '<li>' . $products_quantity . TEXT_PRODUCT_QUANTITY . '</li>'  : '') . "\n"; ?>
-  <?php echo (($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name)) ? '<li>' . TEXT_PRODUCT_MANUFACTURER . $manufacturers_name . '</li>' : '') . "\n"; ?>
+    <table border="0">
+        <tbody>
 
-  <?php echo (($flag_show_product_info_weight == 1 and $products_weight !=0) ? '<li>' . TEXT_PRODUCT_WEIGHT .  $products_weight . TEXT_PRODUCT_WEIGHT_UNIT . '</li>'  : '') . "\n"; ?>
-  <?php
+  <?php if ($flag_show_product_info_model == 1 and $products_model !=''){ ?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_MODEL ?></b> </td><td class="main" align="left"><?php echo $products_model ?></td>
+  </tr>
+  <?php }
+  if ($flag_show_product_info_quantity == 1) {?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;<?php echo TEXT_PRODUCT_QUANTITY ?></b> </td><td class="main" align="left"><?php echo $products_quantity ?></td>
+  </tr>
+  <?php }
+  if ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name)) {?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_MANUFACTURER ?></b> </td><td class="main" align="left"><?php echo $manufacturers_name ?></td>
+  </tr>
+  <?php }
+  if($flag_show_product_info_weight == 1 and $products_weight !=0){ ?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_WEIGHT ?></b> </td><td class="main" align="left"><?php echo $products_weight.TEXT_PRODUCT_WEIGHT_UNIT ?></td>
+  </tr>
+  <?php }
   //Robin
-  echo (($net_weight !=0) ? '<li>' . TEXT_PRODUCT_NET_WEIGHT . $net_weight . '</li>' : '') . "\n"; ?>
-  <?php
-  echo (($handle_fee !=0) ? '<li>' . TEXT_PRODUCT_HANDLE_FEE . $handle_fee . '</li>' : '') . "\n"; ?>
-  <?php
-  echo (!empty($type_name) ? '<li>' . TEXT_PRODUCT_TYPE . $type_name . '</li>' : '') . "\n"; ?>
-    <?php
-    echo (!empty($condition_description) ? '<li>' . TEXT_CONDITION_DESCRIPTION . $condition_description . '</li>' : '') . "\n"; ?>
-  <?php
-  echo (!empty($pcolors_name) ? '<li>' . TEXT_COLORS_NAME . $pcolors_name . '</li>' : '') . "\n"; ?>
-  <?php
-  echo (!empty($dimension) ? '<li>' . TEXT_PRODUCT_DIMENSION . $dimension . '</li>' : '') . "\n"; ?>
-
-</ul>
+  if ($net_weight !=0) { ?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_NET_WEIGHT ?></b> </td><td class="main" align="left"><?php echo $net_weight ?></td>
+  </tr>
+  <?php }
+  if (!empty($type_name)) { ?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_TYPE ?></b> </td><td class="main" align="left"><?php echo $type_name ?></td>
+  </tr>
+    <?php }
+    if (!empty($condition_description)) {?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_CONDITION_DESCRIPTION ?></b> </td><td class="main" align="left"><?php echo $condition_description ?></td>
+  </tr>
+  <?php }
+  if (!empty($pcolors_name) ){?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_COLORS_NAME ?></b> </td><td class="main" align="left"><?php echo $pcolors_name ?></td>
+  </tr>
+  <?php }
+  if (!empty($dimension)){?>
+  <tr>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_DIMENSION ?></b> </td><td class="main" align="left"><?php echo $dimension ?></td>
+  </tr>
+        <?php } ?>
+        </tbody>
+    </table>
 <?php
   }
 ?>

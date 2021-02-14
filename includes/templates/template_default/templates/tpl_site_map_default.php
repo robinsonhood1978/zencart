@@ -127,12 +127,7 @@
       }
       if (!empty($page_query_list)) { 
 ?>
-          <li><?php echo BOX_HEADING_MORE_INFORMATION; ?>
-          <ul>
-<?php foreach ($page_query_list as $item) {  ?>
-            <li><?php echo '<a href="' . $item['link'] . '">' . $item['name'] . '</a>'; ?></li>
-<?php } ?>
-         </ul></li>
+
 <?php } ?>
 <?php } ?>
           <ul>
