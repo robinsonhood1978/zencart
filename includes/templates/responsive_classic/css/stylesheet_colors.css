@@ -9,7 +9,7 @@ h2, h3, .cartAttribsList, #cart-box {color:#000000;}
 #navMain ul li a.navCartContentsIndicator:hover {color:#ffffff;}
 .alert {color: #8b0000;}
 legend, .specialsListBoxContents a, .centerBoxContentsAlsoPurch a, .centerBoxContentsFeatured a, .centerBoxContentsSpecials a, .centerBoxContentsNew a, .productPriceDiscount{color:#333;}
-.messageStackWarning, .messageStackError, #navMainWrapper, #navMain ul li a, #navCatTabsWrapper, #navCatTabs li a, #navCatTabs li a:hover, #navCatTabs li:hover, #navEZPagesTop, #navEZPagesTop li a, .pagination li a, #navSuppWrapper, #navSupp li a, #siteinfoIP, #siteinfoLegal, #bannerSix, #siteinfoLegal a:hover, h2.centerBoxHeading, h3.rightBoxHeading, h3.leftBoxHeading, h3.rightBoxHeading a, h3.leftBoxHeading a, .seDisplayedAddressLabel, TR.tableHeading, #shippingEstimatorContent h2, #shippingEstimatorContent th, #checkoutConfirmDefault .cartTableHeading, #filter-wrapper, .navSplitPagesLinks a, .current, .productListing-rowheading a, .productListing-rowheading a, .prod-list-wrap, #productQuantityDiscounts table tr:first-child td, #reviewsWriteHeading, #sendSpendWrapper h2, #accountDefault #sendSpendWrapper h2, #gvFaqDefaultSubHeading, #checkoutPayAddressDefaultAddress, #checkoutShipAddressDefaultAddress, #accountLinksWrapper h2, h2#addressBookDefaultPrimary, #myAccountPaymentInfo h3, #myAccountShipInfo h3, #myAccountPaymentInfo h4, #myAccountShipInfo h4, input.submit_button, input.submit_button:hover, input.cssButtonHover, span.normal_button{color: #ffffff;}
+.messageStackWarning, .messageStackError, #navMainWrapper, #navMain ul li a, #navCatTabsWrapper, #navCatTabs li a, #navCatTabs li a:hover, #navCatTabs li:hover, #navEZPagesTop, #navEZPagesTop li a, .pagination li a, #navSuppWrapper, #navSupp li a, #siteinfoIP, #siteinfoLegal, #bannerSix, #siteinfoLegal a:hover, h2.centerBoxHeading, h3.rightBoxHeading, h3.leftBoxHeading, h3.rightBoxHeading a, h3.leftBoxHeading a, .seDisplayedAddressLabel, TR.tableHeading, #shippingEstimatorContent h2, #shippingEstimatorContent th, #checkoutConfirmDefault .cartTableHeading, #filter-wrapper, .navSplitPagesLinks a, .current, .productListing-rowheading a, .productListing-rowheading a, .prod-list-wrap, #productQuantityDiscounts table tr:first-child td, #reviewsWriteHeading, #sendSpendWrapper h2, #accountDefault #sendSpendWrapper h2, #gvFaqDefaultSubHeading, #checkoutPayAddressDefaultAddress, #checkoutShipAddressDefaultAddress, #accountLinksWrapper h2, h2#addressBookDefaultPrimary, #myAccountPaymentInfo h3, #myAccountShipInfo h3, #myAccountPaymentInfo h4, #myAccountShipInfo h4, input.submit_button, input.submit_button:hover, input.cssButtonHover, span.normal_button{color: #000;}
 .cartNewItem {color:#33cc33;}
 #orderhistoryContent ul li a i.fa,
 .productSpecialPrice, .productSalePrice, .productSpecialPriceSale, .productPriceDiscount {color:#900404;}
@@ -26,18 +26,35 @@ fieldset, .rowEven, #shippingEstimatorContent tr:nth-child(odd), #order-comments
 #cartContentsDisplay .rowEven:hover, #cartContentsDisplay .rowOdd:hover {background:#e2e2e2;}
 #orderTotals{background:#ccc;}
 legend, #cart-box{background:#bbb;}
-#navMainWrapper, #navSuppWrapper, #shippingEstimatorContent h2, #checkoutConfirmDefault .cartTableHeading, .navSplitPagesLinks a, .productListing-rowheading a:hover, .list-more, #sendSpendWrapper h2, #accountDefault #sendSpendWrapper h2, #gvFaqDefaultSubHeading, #checkoutPayAddressDefaultAddress, #checkoutShipAddressDefaultAddress, #accountLinksWrapper h2, h2#addressBookDefaultPrimary, #reviewsWriteHeading, #myAccountPaymentInfo h3, #myAccountShipInfo h3, span.cssButton.normal_button.button.button_more_reviews, .button_more_reviews:hover, span.cssButton.normal_button.button.button_read_reviews, .button_read_reviews:hover {background:#333;}
-#navSupp li a:hover, .rightBoxHeading, .leftBoxHeading, .centerBoxHeading {background:#444;}
-span.cssButton.normal_button.button.button_logoff, span.cssButton.normal_button.button.small_edit, #navEZPagesTop, .seDisplayedAddressLabel, TR.tableHeading, .prod-list-wrap, #myAccountPaymentInfo h4, #myAccountShipInfo h4 {background:#666;}
+#navMainWrapper, #navSuppWrapper, #shippingEstimatorContent h2, #checkoutConfirmDefault .cartTableHeading, .navSplitPagesLinks a, .productListing-rowheading a:hover, .list-more, #sendSpendWrapper h2, #accountDefault #sendSpendWrapper h2, #gvFaqDefaultSubHeading, #checkoutPayAddressDefaultAddress, #checkoutShipAddressDefaultAddress, #accountLinksWrapper h2, h2#addressBookDefaultPrimary, #reviewsWriteHeading, #myAccountPaymentInfo h3, #myAccountShipInfo h3, span.cssButton.normal_button.button.button_more_reviews, .button_more_reviews:hover, span.cssButton.normal_button.button.button_read_reviews, .button_read_reviews:hover {
+    background: #abbbd3;
+    background-image: url(../images/footer_bg.jpg);
+    background-color: #ffffff;
+    border-right: 1px solid #90C3F6;
+    border-left: 1px solid #90C3F6;
+    border-bottom: 1px solid #90C3F6;
+    width: 100% !important;
+}
+#navSupp li a:hover, .rightBoxHeading, .leftBoxHeading, .centerBoxHeading {
+    background: #ffffff url(../images/navig_middle_blue.gif) repeat-x top left;
+    color: #ffffff;
+}
+span.cssButton.normal_button.button.button_logoff, span.cssButton.normal_button.button.small_edit, #navEZPagesTop, .seDisplayedAddressLabel, TR.tableHeading, .prod-list-wrap, #myAccountPaymentInfo h4, #myAccountShipInfo h4 {background:#fff;}
 #siteinfoIP, #siteinfoLegal, #bannerSix{background:#666665;}
 #navEZPagesTop li a:hover, .pagination li a:hover {background:#777;}
 .messageStackWarning, .messageStackError {background-color:#8b0000;}
 .messageStackSuccess {background-color:#99ff99;}
-#shippingEstimatorContent th, .navSplitPagesLinks a:hover, .productListing-rowheading, #productQuantityDiscounts table tr:first-child td{background:#999;}
-#navCatTabsWrapper, .current, .productListing-rowheading a, .list-more:hover, input.submit_button, span.normal_button {background:#364fb5;}
+#shippingEstimatorContent th, .navSplitPagesLinks a:hover, .productListing-rowheading, #productQuantityDiscounts table tr:first-child td{
+    background: #abbbd3;
+    background-image: url(../images/box_header.gif);
+}
+#navCatTabsWrapper, .current, .productListing-rowheading a, .list-more:hover, input.submit_button, span.normal_button {
+    background: #90C3F6;
+}
+
 .button_goto_prod_details:hover{background:#05a5cb !important;}
 #navCatTabs li a:hover, input.submit_button:hover, input.cssButtonHover {background:#666666;}
-span.normal_button:hover, span.cssButton.normal_button.button.button_goto_prod_details, .button_add_selected:hover{background:#000;}
+span.normal_button:hover, span.cssButton.normal_button.button.button_goto_prod_details, .button_add_selected:hover{background:#f4f4f4;}
 #filter-wrapper {background:#fff;}
 .button_in_cart:hover{background-color:#000;}
 #docGeneralDisplay #pinfo-right, #popupShippingEstimator, #popupSearchHelp, #popupAdditionalImage, #popupImage, #popupCVVHelp, #popupCouponHelp, #popupAtrribsQuantityPricesHelp, #infoShoppingCart{background:none;}

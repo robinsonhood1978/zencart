@@ -248,6 +248,28 @@ table th {
     border-left: 1px solid #90C3F6;
     border-bottom: 1px solid #90C3F6;
 }
+.searchbar {
+    background-image: url(../images/search_bar.gif);
+    background-color: #ffffff;
+    border-right: 1px solid #90C3F6;
+    border-left: 1px solid #90C3F6;
+    border-bottom: 1px solid #90C3F6;
+    height:29px;
+}
+input {
+    font-family: "Arial", "Helvetica", "sans-serif";
+    font-size: 9pt;
+    color: #000000;
+    border: 1px dotted #90C3F6;
+}
+.searchproduct {
+    font-family: "Arial", "Helvetica", "sans-serif";
+    font-size: 14px;
+    font-weight: bolder;
+    color: #663300;
+    text-decoration: blink;
+    padding: 6px;
+}
 .footertop, .footerbottom {
     padding: 5px;
 }
