@@ -52,12 +52,12 @@ if (PRODUCT_LIST_CATEGORIES_IMAGE_STATUS == 'true') {
 
 <?php
   echo $form;
-  echo zen_draw_hidden_field('main_page', FILENAME_DEFAULT);
+  echo zen_draw_hidden_field('main_page', 'advanced_search_result');
 ?>
 <?php
   // draw cPath if known
   if (empty($getoption_set)) {
-    echo zen_draw_hidden_field('cPath', $cPath);
+    //echo zen_draw_hidden_field('cPath', $cPath);
   } else {
     // draw manufacturers_id
     echo zen_draw_hidden_field($get_option_variable, $_GET[$get_option_variable]);

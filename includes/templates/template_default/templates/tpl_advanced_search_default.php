@@ -48,9 +48,9 @@
 
 
 
-                    <div class="row">
+                    <div class="row2">
                         <div class="cell">
-                            by Model
+                            <font color="blue"><b>by Model</b></font>
                         </div>
                         <div class="cell">
                             Brand
@@ -74,9 +74,9 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row2">
                         <div class="cell">
-                            by Part No.
+                            <font color="blue"><b>by Part No.</b></font>
                         </div>
                         <div class="cell">
                             Brand <select id="pbrand" data-placeholder="Choose a brand..." class="chosen-select" name="p_brand">

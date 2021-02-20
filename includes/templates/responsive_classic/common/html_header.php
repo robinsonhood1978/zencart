@@ -304,7 +304,7 @@ if (in_array($current_page_base,explode(",",'popup_image,popup_image_additional'
           String.prototype.replaceText = function () { return this.replace(/\+/g, ' ') };
           $(function(){
 
-              $(".chosen-select").chosen({width: "65%"});
+              $(".chosen-select").chosen({width: "80%"});
               let model_brand = decodeURIComponent(getQueryVariable("m_brand"));
               let series_code = decodeURIComponent(getQueryVariable("series_code"));
               let model_code = decodeURIComponent(getQueryVariable("model_code"));

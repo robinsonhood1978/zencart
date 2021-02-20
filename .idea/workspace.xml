@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/common/tpl_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/common/tpl_header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/buttons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet_colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet_colors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet_css_buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet_css_buttons.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/product_listing_alpha_sorter.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/product_listing_alpha_sorter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/common/html_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/common/html_header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_index_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_index_default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_modules_categories_tabs.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_modules_categories_tabs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_index_product_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_index_product_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_advanced_search_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_advanced_search_default.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +225,9 @@
       <workItem from="1613812009490" duration="1725000" />
       <workItem from="1613813853551" duration="1716000" />
       <workItem from="1613815690948" duration="1724000" />
-      <workItem from="1613817549818" duration="163000" />
+      <workItem from="1613817549818" duration="758000" />
+      <workItem from="1613850238711" duration="1670000" />
+      <workItem from="1613852045477" duration="1717000" />
     </task>
     <servers />
   </component>
