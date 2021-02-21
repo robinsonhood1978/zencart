@@ -81,8 +81,10 @@ if (!isset($flag_disable_footer) || !$flag_disable_footer) {
 	}
 	function getModelTables(json){
 		var html = "";
+		let index=0;
 		for(var p in json){
-		  html += getModelTable(json[p]);
+		  html += getModelTable(json[p],index);
+		    index++;
 		}
 		return html;
 	}
@@ -100,36 +102,41 @@ if (!isset($flag_disable_footer) || !$flag_disable_footer) {
 		table += rows;
 		return table;
 	}
-    function getSeries(child){
+    function getSeries(child,index){
         var str = '';
-
-        for(var i = 0; i < child.length; i=i+4){
-            let body = '<tr width="100%">' +
-                '<td width="25%" nowrap=""><div id="series_'+i+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part0]</div></td>' +
-                '<td width="25%" nowrap=""><div id="series_'+(i+1)+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part1]</div></td>' +
-                '<td width="25%" nowrap=""><div id="series_'+(i+2)+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part2]</div></td>' +
-                '<td width="25%" nowrap=""><div id="series_'+(i+3)+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part3]</div></td>' +
-                '</tr>';
+        let body_head = '<tr width="100%">';
+        let body_foot = '</tr>';
+        str+=body_head;
+        for(let i = 0; i < child.length; i++){
+            let body =
+                '<td width="25%" nowrap=""><div id="series_'+index+'_'+i+'" onclick="javascript:rowSelectEffect(this);" class="moduleRow" onmouseover="rowOverEffect(this)" onmouseout="rowOutEffect(this)">[part0]</div></td>';
             let name0 = (child[i]==null)?'':child[i].name;
-            let name1 = (child[i+1]==null)?'':child[i+1].name;
-            let name2 = (child[i+2]==null)?'':child[i+2].name;
-            let name3 = (child[i+3]==null)?'':child[i+3].name;
             body = body.replaceAll('[part0]',name0);
-            body = body.replaceAll('[part1]',name1);
-            body = body.replaceAll('[part2]',name2);
-            body = body.replaceAll('[part3]',name3);
             str += body;
+            if(i%4==0){
+                if(i>0){
+                    str+=body_foot;
+                }
+            }
         }
+        if(child.length%4!=0){
+            let mod = 4-child.length%4;
+            for(let j=0;j<mod;j++){
+                str+='<td width="25%" nowrap=""></td>';
+            }
+            str+=body_foot;
+        }
+
         return str;
     }
-	function getModelTable(str){
+	function getModelTable(str,index){
 		//console.log(str['name']);
 		var table = "";
 
         table += '<table width="100%">\n' +
             '<tbody>\n' +
             '<tr width="100%"><td width="25%"><li><font color="green"><b>'+str['name']+'</b></font></li></td></tr>' ;
-        let series = getSeries(str['child']);
+        let series = getSeries(str['child'],index);
         table += series;
         table += '</tbody>\n' +
             '</table>';
@@ -137,7 +144,7 @@ if (!isset($flag_disable_footer) || !$flag_disable_footer) {
 		for(let i = 0; i < str['child'].length; i++){
 			//let header = getTableHeader(str['child'][i]['name']);
 			let rows = (str['child'][i]['child']==null)?'':getTableRows(str['child'][i]['child']);
-			table += '<div id="tmodel_series_'+i+'" class="tmodel" style="display:none">'+rows+'</div>';
+			table += '<div id="tmodel_series_'+index+'_'+i+'" class="tmodel" style="display:none">'+rows+'</div>';
 		}
 		
 		return table;
