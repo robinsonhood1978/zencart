@@ -234,7 +234,7 @@ $zco_notifier->notify('NOTIFY_SEARCH_SELECT_STRING');
 //  $from_str = "from " . TABLE_PRODUCTS . " p left join " . TABLE_MANUFACTURERS . " m using(manufacturers_id), " . TABLE_PRODUCTS_DESCRIPTION . " pd left join " . TABLE_SPECIALS . " s on p.products_id = s.products_id, " . TABLE_CATEGORIES . " c, " . TABLE_PRODUCTS_TO_CATEGORIES . " p2c";
 $from_str = "FROM (" . TABLE_PRODUCTS . " p
              LEFT JOIN " . TABLE_MANUFACTURERS . " m
-             USING(manufacturers_id), " . TABLE_PRODUCTS_DESCRIPTION . " pd, " . TABLE_CATEGORIES . " c, " . TABLE_PRODUCTS_TO_CATEGORIES . " p2c )";
+             USING(manufacturers_id), " . TABLE_PRODUCTS_DESCRIPTION . " pd, " . TABLE_CATEGORIES . " c, " . TABLE_PRODUCTS_TO_CATEGORIES . " p2c ) left join part_view pv on p.products_id=pv.product_id left join model_view mv on p.products_id=mv.product_id";
              
 if (ADVANCED_SEARCH_INCLUDE_METATAGS == 'true') {
     $from_str .= 
@@ -332,7 +332,13 @@ if (isset($keywords) && zen_not_null($keywords)) {
                                          OR p.products_model
                                          LIKE '%:keywords%'
                                          OR m.manufacturers_name
-                                         LIKE '%:keywords%'";
+                                         LIKE '%:keywords%' 
+                                         OR pv.part_code like '%:keywords%' 
+                                         or pv.brand_name like '%:keywords%' 
+                                         OR mv.model_code like '%:keywords%' 
+                                         or mv.brand_name like '%:keywords%' 
+                                         or mv.series_code like '%:keywords%'";
+
 
         $where_str = $db->bindVars($where_str, ':keywords', $search_keywords[$i], 'noquotestring');
         
@@ -508,7 +514,7 @@ if ((!isset($_GET['sort'])) || (!preg_match('/[1-8][ad]/', $_GET['sort'])) || (s
 
 $listing_sql = $select_str . $from_str . $where_str . $order_str;
 //echo $listing_sql;
-
+//exit();
 // Notifier Point
 $zco_notifier->notify('NOTIFY_SEARCH_ORDERBY_STRING', $listing_sql);
 
