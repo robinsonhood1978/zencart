@@ -17,9 +17,10 @@ require 'includes/init_includes/init_database.php';
 
 //$cPath = empty($_GET['cPath'])?'0':$_GET['cPath'];
 $mseries = $_GET['mseries'];
+$mbrand = $_GET['mbrand'];
 $models_array = [];
 
-$models = $db->Execute("select distinct a.model_code from fortech_model a join fortech_series_model b on a.series_model_id=b.series_model_id where b.series_code='".$mseries."'");
+$models = $db->Execute("select distinct a.model_code from fortech_model a join fortech_series_model b on a.series_model_id=b.series_model_id join fortech_brand_series c on b.brand_series_id=c.brand_series_id where b.series_code='".$mseries."' and c.brand_name='".$mbrand."'");
 foreach ($models as $mod) {
     $models_array[] = [
         'name' => $mod['model_code']

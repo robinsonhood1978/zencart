@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/modules/pages/advanced_search_result/header_php.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/advanced_search_result/header_php.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getMM.php" beforeDir="false" afterPath="$PROJECT_DIR$/getMM.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/common/html_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/common/html_header.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +25,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Scalp-zzF-Serve" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -233,6 +235,8 @@
       <workItem from="1613981402285" duration="887000" />
       <workItem from="1613983782000" duration="622000" />
       <workItem from="1613987644890" duration="1570000" />
+      <workItem from="1614064720560" duration="1711000" />
+      <workItem from="1614066568084" duration="467000" />
     </task>
     <servers />
   </component>

@@ -250,9 +250,9 @@ if (in_array($current_page_base,explode(",",'popup_image,popup_image_additional'
                   }
               });
           }
-          function changeModel(value, mseries){
+          function changeModel(value, mseries, mbrand){
 
-              let url = '/getMM.php?cPath='+cPath+'&mseries='+mseries;
+              let url = '/getMM.php?cPath='+cPath+'&mbrand='+mbrand+'&mseries='+mseries;
               $.getJSON(url, function(json){
                   if(json) {
                       $("#models").empty();
@@ -322,10 +322,10 @@ if (in_array($current_page_base,explode(",",'popup_image,popup_image_additional'
                       if(model_code!=null && model_code!=''){
                           model_code = model_code.replaceText();
                           //console.log(model_code)
-                          changeModel(model_code,series_code);
+                          changeModel(model_code,series_code,model_brand);
                       }
                       else{
-                          changeModel('',series_code);
+                          changeModel('',series_code,model_brand);
                       }
                   }
                   else{
