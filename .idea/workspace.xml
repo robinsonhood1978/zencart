@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getMM.php" beforeDir="false" afterPath="$PROJECT_DIR$/getMM.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/common/html_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/common/html_header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/update_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/update_product.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -236,7 +235,11 @@
       <workItem from="1613983782000" duration="622000" />
       <workItem from="1613987644890" duration="1570000" />
       <workItem from="1614064720560" duration="1711000" />
-      <workItem from="1614066568084" duration="467000" />
+      <workItem from="1614066568084" duration="1200000" />
+      <workItem from="1614367537865" duration="585000" />
+      <workItem from="1614369319673" duration="1707000" />
+      <workItem from="1614371826438" duration="1662000" />
+      <workItem from="1614373702704" duration="844000" />
     </task>
     <servers />
   </component>

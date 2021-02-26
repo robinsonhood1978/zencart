@@ -52,6 +52,19 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
     'products_price_sorter' => convertToFloat($_POST['products_price_sorter']),
   );
 
+    $ext_sql_data = array(
+        'products_id' => 0,
+        'type_id' => (int)$_POST['type_id'],
+        'condition_id' => (int)$_POST['condition_id'],
+        'color_id' => (int)$_POST['color_id'],
+        'products_show_part' => (int)$_POST['products_show_part'],
+        'products_show_model' => (int)$_POST['products_show_model'],
+        'products_show_warranty' => (int)$_POST['products_show_warranty'],
+        'products_show_disclaimer' => (int)$_POST['products_show_disclaimer'],
+        'products_dimension' => $_POST['products_dimension'],
+        'products_net_weight' => (int)$_POST['products_net_weight'],
+        'products_handle' => (int)$_POST['products_handle_fee']
+    );
 
 
     $db_filename = zen_limit_image_filename($_POST['products_image'], TABLE_PRODUCTS, 'products_image');
@@ -75,6 +88,9 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
 
       zen_db_perform(TABLE_PRODUCTS, $sql_data_array);
       $products_id = zen_db_insert_id();
+      $ext_sql_data['products_id'] = (int)$products_id;
+      zen_db_perform(TABLE_PRODUCTS_EXT, $ext_sql_data);
+
 
       foreach ($_POST as $key => $value) {
          // echo $key."=".$value."<br>";
@@ -665,19 +681,7 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
 
     zen_db_perform(TABLE_PRODUCTS, $sql_data_array, 'update', "products_id = " . (int)$products_id);
 //Robin
-      $ext_sql_data = array(
-          'type_id' => (int)$_POST['type_id'],
-          'condition_id' => (int)$_POST['condition_id'],
-          'color_id' => (int)$_POST['color_id'],
-          'products_show_part' => (int)$_POST['products_show_part'],
-          'products_show_model' => (int)$_POST['products_show_model'],
-          'products_show_warranty' => (int)$_POST['products_show_warranty'],
-          'products_show_disclaimer' => (int)$_POST['products_show_disclaimer'],
-          'products_dimension' => $_POST['products_dimension'],
-          'products_net_weight' => (int)$_POST['products_net_weight'],
-          'products_handle' => (int)$_POST['products_handle_fee']
-          );
-
+    $ext_sql_data['products_id'] = (int)$products_id;
     zen_db_perform(TABLE_PRODUCTS_EXT, $ext_sql_data, 'update', "products_id = " . (int)$products_id);
 
     zen_record_admin_activity('Updated product ' . (int)$products_id . ' via admin console.', 'info');
