@@ -25,7 +25,7 @@ $part_array = [];
         if($id==0){
             $brands = $db->Execute("select b.brand_part_id,b.brand_name,ifnull(p.part_num,0) as part_num from fortech_brand_part b 
             left join (select brand_part_id,count(*) as part_num from fortech_part group by brand_part_id) p on b.brand_part_id=p.brand_part_id
-            where b.product_id=".$pid." order by b.brand_part_id");
+            where b.product_id=".$pid." order by b.brand_name");
             //print_r($parts);
             foreach ($brands as $brand) {
                 $arr[] = [
@@ -37,7 +37,7 @@ $part_array = [];
                     'type' => ($brand['part_num']>0)?'mid':'leaf'
                 ];
             }
-			$parts = $db->Execute("select b.brand_part_id,b.brand_name,p.part_id,p.part_code from fortech_brand_part b left join fortech_part p on b.brand_part_id=p.brand_part_id where b.product_id=".$pid." order by b.brand_part_id");
+			$parts = $db->Execute("select b.brand_part_id,b.brand_name,p.part_id,p.part_code from fortech_brand_part b left join fortech_part p on b.brand_part_id=p.brand_part_id where b.product_id=".$pid." order by b.brand_name,p.part_code");
             foreach ($parts as $part) {
 				foreach ($arr as &$value){
 					if( $value['id'] == $part['brand_part_id']){

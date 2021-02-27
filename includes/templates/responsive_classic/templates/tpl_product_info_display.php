@@ -94,13 +94,13 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
   <?php }
   if($flag_show_product_info_weight == 1 and $products_weight !=0){ ?>
   <tr>
-      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_WEIGHT ?></b> </td><td class="main" align="left"><?php echo $products_weight.TEXT_PRODUCT_WEIGHT_UNIT ?></td>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_WEIGHT ?></b> </td><td class="main" align="left"><?php echo $products_weight.'  '.TEXT_PRODUCT_WEIGHT_UNIT ?></td>
   </tr>
   <?php }
   //Robin
   if ($net_weight !=0) { ?>
   <tr>
-      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_NET_WEIGHT ?></b> </td><td class="main" align="left"><?php echo $net_weight ?></td>
+      <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_NET_WEIGHT ?></b> </td><td class="main" align="left"><?php echo $net_weight.'  '.TEXT_PRODUCT_WEIGHT_UNIT  ?></td>
   </tr>
   <?php }
   if (!empty($type_name)) { ?>

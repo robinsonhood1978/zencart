@@ -32,7 +32,7 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
     'products_model' => zen_db_prepare_input($_POST['products_model']),
     'products_price' => convertToFloat($_POST['products_price']),
     'products_date_available' => $products_date_available,
-    'products_weight' => convertToFloat($_POST['products_weight']),
+    'products_weight' => convertToFloat($_POST['products_weight']/1000),
     'products_status' => (int)$_POST['products_status'],
     'products_virtual' => (int)$_POST['products_virtual'],
     'products_tax_class_id' => (int)$_POST['products_tax_class_id'],
@@ -62,7 +62,7 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
         'products_show_warranty' => (int)$_POST['products_show_warranty'],
         'products_show_disclaimer' => (int)$_POST['products_show_disclaimer'],
         'products_dimension' => $_POST['products_dimension'],
-        'products_net_weight' => (int)$_POST['products_net_weight'],
+        'products_net_weight' => convertToFloat($_POST['products_net_weight']/1000),
         'products_handle' => (int)$_POST['products_handle_fee']
     );
 

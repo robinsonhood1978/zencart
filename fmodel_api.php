@@ -25,17 +25,17 @@ $level = $_GET['level'];
         if($id==0){
             $brands = $db->Execute("select b.brand_series_id,b.brand_name,ifnull(p.part_num,0) as part_num from fortech_brand_series b 
                                             left join (select brand_series_id,count(*) as part_num from fortech_series_model group by brand_series_id) p 
-                                            on b.brand_series_id=p.brand_series_id where b.product_id=".$pid." order by b.brand_series_id");
+                                            on b.brand_series_id=p.brand_series_id where b.product_id=".$pid." order by b.brand_name");
             //print_r($parts);
             foreach ($brands as $brand) {
                 
 
 				$series = $db->Execute("select b.series_model_id,b.series_code,ifnull(p.model_num,0) as model_num from fortech_series_model b left join 
                                                 (select series_model_id,count(*) as model_num from fortech_model group by series_model_id) p on b.series_model_id=p.series_model_id 
-                                                where b.brand_series_id=".$brand['brand_series_id']." order by b.series_model_id");
+                                                where b.brand_series_id=".$brand['brand_series_id']." order by b.series_code");
                 $series_array = array();
 				foreach ($series as $sery) {
-					$parts = $db->Execute("select model_id,model_code from fortech_model where series_model_id=".$sery['series_model_id']);
+					$parts = $db->Execute("select model_id,model_code from fortech_model where series_model_id=".$sery['series_model_id']." order by model_code");
 					$part_array = array();
 					foreach ($parts as $part) {
 						$part_array[] = [
