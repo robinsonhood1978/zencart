@@ -19,7 +19,7 @@ require 'includes/init_includes/init_database.php';
 $mbrand = $_GET['mbrand'];
 $series_array = [];
 
-$series = $db->Execute("select distinct a.series_code from fortech_series_model a join fortech_brand_series b on a.brand_series_id=b.brand_series_id where b.brand_name='".$mbrand."'");
+$series = $db->Execute("select distinct a.series_code from fortech_series_model a join fortech_brand_series b on a.brand_series_id=b.brand_series_id where b.brand_name='".$mbrand."' order by a.series_code");
 foreach ($series as $ser) {
     $series_array[] = [
         'name' => $ser['series_code']

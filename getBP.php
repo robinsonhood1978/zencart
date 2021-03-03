@@ -19,7 +19,7 @@ require 'includes/init_includes/init_database.php';
 $pbrand = $_GET['pbrand'];
 $parts_array = [];
 
-$parts = $db->Execute("select a.part_id,a.part_code from fortech_part a join fortech_brand_part b on a.brand_part_id=b.brand_part_id where b.brand_name='".$pbrand."'");
+$parts = $db->Execute("select a.part_id,a.part_code from fortech_part a join fortech_brand_part b on a.brand_part_id=b.brand_part_id where b.brand_name='".$pbrand."' order by a.part_code");
 foreach ($parts as $part) {
     $parts_array[] = [
         'name' => $part['part_code'],
