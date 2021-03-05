@@ -82,17 +82,17 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
       <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_MODEL ?></b> </td><td class="main" align="left"><?php echo $products_model ?></td>
   </tr>
   <?php }
-  if ($flag_show_product_info_quantity == 1) {?>
+  if ($flag_show_product_info_quantity == 2) {?>
   <tr>
       <td class="main" align="left"><b>&nbsp;<?php echo TEXT_PRODUCT_QUANTITY ?></b> </td><td class="main" align="left"><?php echo $products_quantity ?></td>
   </tr>
   <?php }
-  if ($flag_show_product_info_manufacturer == 1 and !empty($manufacturers_name)) {?>
+  if ($flag_show_product_info_manufacturer == 2 and !empty($manufacturers_name)) {?>
   <tr>
       <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_MANUFACTURER ?></b> </td><td class="main" align="left"><?php echo $manufacturers_name ?></td>
   </tr>
   <?php }
-  if($flag_show_product_info_weight == 1 and $products_weight !=0){ ?>
+  if($flag_show_product_info_weight == 2 and $products_weight !=0){ ?>
   <tr>
       <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_WEIGHT ?></b> </td><td class="main" align="left"><?php echo $products_weight.'  '.TEXT_PRODUCT_WEIGHT_UNIT ?></td>
   </tr>

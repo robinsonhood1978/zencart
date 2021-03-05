@@ -62,7 +62,7 @@ if (!defined('IS_ADMIN_FLAG')) {
 
                 <div class="row header">
                     <div class="cell">
-                        Advanced Filter
+
                     </div>
                     <div class="cell">
 
@@ -102,6 +102,8 @@ if (!defined('IS_ADMIN_FLAG')) {
                             <option value="" selected="selected">Please Select</option>
                         </select>
                     </div>
+                </div>
+                <div class="productListing-rowheading">
                 </div>
                 <div class="row2">
                     <div class="cell">

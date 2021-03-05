@@ -1,3 +1,5 @@
+<div class="searchbar">
+</div>
 <?php
 /**
  * product_listing module
@@ -61,7 +63,7 @@ for ($col=0, $n=sizeof($column_list); $col<$n; $col++) {
   if ( ($column_list[$col] != 'PRODUCT_LIST_IMAGE') ) {
     $lc_text = zen_create_sort_heading($_GET['sort'], $col+1, $lc_text);
   }
-
+    $lc_text='';
 
 
   $list_box_contents[0][$col] = array('align' => $lc_align,
