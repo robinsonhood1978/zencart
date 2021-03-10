@@ -143,7 +143,7 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
           if (strpos("*#".$key,'#modelb') && strpos($key,'models') && strpos($key,'__file')  ) {
 
               $series_file = explode('__',$key)[0];
-              echo $series_file."=".$value."<br>";
+              // echo $series_file."=".$value."<br>";
 
               foreach ($mb_arr as &$val){
                   foreach ($val['child'] as &$series){
@@ -184,8 +184,10 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
                   $m_child_size = count($value['child'][$init]['child']);
                   for($initm = 0 ; $initm < $m_child_size ; $initm++){
                       //$parts .= $value['child'][$init]['column'] . "=" . $value['child'][$init]['name']."<br/>";
-                      $sql_series = "INSERT INTO fortech_model (model_code, series_model_id) VALUES ('" . $value['child'][$init]['child'][$initm]['name'] . "', " . $series_model_id . ")";
-                      $db->Execute($sql_series);
+                      if($value['child'][$init]['child'][$initm]['name']!=''){
+                          $sql_series = "INSERT INTO fortech_model (model_code, series_model_id) VALUES ('" . $value['child'][$init]['child'][$initm]['name'] . "', " . $series_model_id . ")";
+                          $db->Execute($sql_series);
+                      }
                   }
               }
           }
@@ -358,7 +360,7 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
               if (strpos("*#".$key,'#modelb') && strpos($key,'models') && strpos($key,'__file')  ) {
 
                   $series_file = explode('__',$key)[0];
-                  echo $series_file."=".$value."<br>";
+                  // echo $series_file."=".$value."<br>";
 
                   foreach ($mb_arr as &$val){
                       foreach ($val['child'] as &$series){
@@ -447,7 +449,7 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
                       $mb_arr[$begin]['id']= $md_brand_array[$ini]['id'];
                       break;
                   }
-                  echo "<br>";
+                  //echo "<br>";
               }
               //数据库中存在同名brand
               if($my_flag==1){
@@ -482,8 +484,10 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
                              }
                              //model不存在同名
                              if($model_flag==0){
-                                 $sql_series = "INSERT INTO fortech_model (model_code, series_model_id) VALUES ('" . $new_model_name . "', " . $series_model_id . ")";
-                                 $db->Execute($sql_series);
+                                 if($new_model_name!=''){
+                                     $sql_series = "INSERT INTO fortech_model (model_code, series_model_id) VALUES ('" . $new_model_name . "', " . $series_model_id . ")";
+                                     $db->Execute($sql_series);
+                                 }
                              }
                          }
                       }
@@ -497,8 +501,10 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
                           $m_child_size = count($mb_arr[$begin]['child'][$new_begin]['child']);
                           for($initm = 0 ; $initm < $m_child_size ; $initm++){
                               //$parts .= $value['child'][$init]['column'] . "=" . $value['child'][$init]['name']."<br/>";
-                              $sql_series = "INSERT INTO fortech_model (model_code, series_model_id) VALUES ('" . $mb_arr[$begin]['child'][$new_begin]['child'][$initm]['name'] . "', " . $series_model_id . ")";
-                              $db->Execute($sql_series);
+                              if($mb_arr[$begin]['child'][$new_begin]['child'][$initm]['name']!=''){
+                                  $sql_series = "INSERT INTO fortech_model (model_code, series_model_id) VALUES ('" . $mb_arr[$begin]['child'][$new_begin]['child'][$initm]['name'] . "', " . $series_model_id . ")";
+                                  $db->Execute($sql_series);
+                              }
                           }
                           //echo $mb_arr[$begin]['child'][$new_begin]['name']."__".$mb_arr[$begin]['id'];
                       }
@@ -522,8 +528,10 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
                           $m_child_size = count($mb_arr[$begin]['child'][$init]['child']);
                           for($initm = 0 ; $initm < $m_child_size ; $initm++){
                               //$parts .= $value['child'][$init]['column'] . "=" . $value['child'][$init]['name']."<br/>";
-                              $sql_series = "INSERT INTO fortech_model (model_code, series_model_id) VALUES ('" . $mb_arr[$begin]['child'][$init]['child'][$initm]['name'] . "', " . $series_model_id . ")";
-                              $db->Execute($sql_series);
+                              if($mb_arr[$begin]['child'][$init]['child'][$initm]['name']!=''){
+                                  $sql_series = "INSERT INTO fortech_model (model_code, series_model_id) VALUES ('" . $mb_arr[$begin]['child'][$init]['child'][$initm]['name'] . "', " . $series_model_id . ")";
+                                  $db->Execute($sql_series);
+                              }
                           }
                       }
                   }
@@ -636,7 +644,7 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
                       $brandArr[$begin]['id']= $db_arr[$ini]['id'];
                       break;
                   }
-                  echo "<br>";
+                  // echo "<br>";
               }
               if($flag==1){
                     $new_part_size = count($brandArr[$begin]['child']);
@@ -645,7 +653,7 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
                         foreach ($db_arr[$db_index]['child'] as $key=>$value){
                             if($brandArr[$begin]['child'][$new_begin]['name']==$value['name']){
                                 $part_flag=1;
-                                echo $value['name']."<br>";
+                                //echo $value['name']."<br>";
                                 break;
                             }
                         }
