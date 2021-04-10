@@ -167,18 +167,16 @@ class shipping extends base {
       }
 
       $size = sizeof($include_quotes);
-        echo $size;
+
       for ($i=0; $i<$size; $i++) {
           //if($i==0)
-          print_r($include_quotes[$i]);
-          print_r($GLOBALS[$include_quotes[$i]]);
+          //print_r($include_quotes[$i]);
           //if($i!=0){
         if (method_exists($GLOBALS[$include_quotes[$i]], 'update_status')) $GLOBALS[$include_quotes[$i]]->update_status();
 
         if (FALSE == $GLOBALS[$include_quotes[$i]]->enabled) continue;
 
         $save_shipping_weight = $shipping_weight;
-          echo 'abc'.$method;
           $quotes = $GLOBALS[$include_quotes[$i]]->quote($method);
 
         if (!isset($quotes['tax'])) $quotes['tax'] = 0;
@@ -188,7 +186,7 @@ class shipping extends base {
       }
 
     }
-      echo 88;
+
     $this->notify('NOTIFY_SHIPPING_MODULE_GET_ALL_QUOTES', $quotes_array, $quotes_array);
     return $quotes_array;
   }

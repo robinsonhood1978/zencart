@@ -72,6 +72,7 @@ function __construct()
 
 function quote($method = '')
 {
+
     global $db, $order, $cart, $currencies, $template, $parcelweight, $packageitems;
 //	$module = substr($_SESSION['shipping'], 0,6);
 //	$method = substr($_SESSION['shipping'],7);
@@ -151,7 +152,7 @@ function quote($method = '')
     // loop through cart extracting productIDs and qtys //
 
     $myorder = $_SESSION['cart']->get_products();
- 
+
     for($x = 0 ; $x < count($myorder) ; $x++ )
     {
         $t = $myorder[$x]['id'] ;
@@ -159,6 +160,7 @@ function quote($method = '')
 		$w = $myorder[$x]['weight'];
  
         $dim_query = "select products_length, products_height, products_width from " . TABLE_PRODUCTS . " where products_id='$t' limit 1 ";
+        //echo $dim_query;
         $dims = $db->Execute($dim_query);
 
         // re-orientate //
@@ -169,7 +171,7 @@ function quote($method = '')
         if($dims->fields['products_width']  == 0) {$dims->fields['products_width']  = $defaultdims[1] ; }
         if($dims->fields['products_length'] == 0) {$dims->fields['products_length'] = $defaultdims[2] ; }
         if($w == 0) {$w = 1 ; }  // 1 gram minimum
-		
+
 		$parcelweight += $w * $q;
 		
         // get the cube of these items

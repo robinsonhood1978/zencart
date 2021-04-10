@@ -98,7 +98,7 @@ if (sizeof($statusArray)) {
 ?>
 
 <h2 id="orderHistoryStatus"><?php echo HEADING_ORDER_HISTORY; ?></h2>
-<table id="myAccountOrdersStatus">
+<table id="myAccountOrdersStatus" rules=rows>
     <tr class="tableHeading">
         <th scope="col" id="myAccountStatusDate"><?php echo TABLE_HEADING_STATUS_DATE; ?></th>
         <th scope="col" id="myAccountStatus"><?php echo TABLE_HEADING_STATUS_ORDER_STATUS; ?></th>
