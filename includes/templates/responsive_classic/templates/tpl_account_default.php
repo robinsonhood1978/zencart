@@ -53,7 +53,14 @@
 </table>
 <?php
   }
+    if($group_name!=''){
 ?>
+    <div class="alert alert-success">
+        <strong>NOTE:</strong> You are a member of the <?php echo($group_name); ?> group.
+    </div>
+    <?php
+  }
+  ?>
 <br class="clearBoth" />
 <div id="accountLinksWrapper" class="back">
 <h2><?php echo MY_ACCOUNT_TITLE; ?></h2>

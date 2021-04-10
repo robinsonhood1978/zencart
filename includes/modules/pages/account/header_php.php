@@ -16,6 +16,14 @@ if (!zen_is_logged_in()) {
   $_SESSION['navigation']->set_snapshot();
   zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
 }
+$group_name = '';
+$group_query = $db->Execute("select customers_group_pricing from " . TABLE_CUSTOMERS . " where customers_id = '" . (int)$_SESSION['customer_id'] . "'");
+if ($group_query->fields['customers_group_pricing'] != '0') {
+    $group = $db->Execute("select group_name, group_percentage from " . TABLE_GROUP_PRICING . "
+                                      where group_id = '" . (int)$group_query->fields['customers_group_pricing'] . "'");
+    $group_name = $group->fields['group_name'] ;
+}
+// echo '123'.$group_name;
 $gv_query = "SELECT amount
              FROM " . TABLE_COUPON_GV_CUSTOMER . "
              WHERE customer_id = :customersID";

@@ -186,6 +186,7 @@ if (isset($_SESSION['cart']->cartID)) {
 
 // get all available shipping quotes
 $quotes = $shipping_modules->quote();
+
   // check that the currently selected shipping method is still valid (in case a zone restriction has disabled it, etc)
   if (isset($_SESSION['shipping']['id'])) {
 

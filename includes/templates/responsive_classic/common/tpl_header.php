@@ -83,6 +83,20 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa fa-bar
     <li><a class="navCartContentsIndicator" href="<?php echo zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL'); ?>"><i class="fa fa-shopping-cart" title="Shopping Cart"></i></a></li>
     <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><i class="fa fa-check-square" title="Checkout"></i></a></li>
 <?php }?>
+      <?php
+      if($_SESSION['customer_id']){
+      ?>
+      <li class="last" style="color:green">
+          Welcome, <?php echo($_SESSION['customer_first_name'] . ' ' . $_SESSION['customer_last_name']); ?>
+          <?php
+          if($group_name!=''){
+              ?>
+              (<?php echo($group_name); ?>)
+          <?php } ?>
+      </li>
+      <?php
+      }
+      ?>
   </ul>
 <div id="navMainSearch" class="forward">
   <?php require(DIR_WS_MODULES . zen_get_module_sidebox_directory('search_header.php')); ?>
@@ -131,6 +145,20 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa fa-bar
     </li>
     <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
 <?php }?>
+        <?php
+        if($_SESSION['customer_id']){
+        ?>
+        <li class="last" style="color:green">
+            Welcome, <?php echo($_SESSION['customer_first_name'] . ' ' . $_SESSION['customer_last_name']); ?>
+            <?php
+            if($group_name!=''){
+                ?>
+                (<?php echo($group_name); ?>)
+            <?php } ?>
+        </li>
+        <?php
+        }
+        ?>
 </ul>
 <div id="navMainSearch" class="forward">
    <?php require(DIR_WS_MODULES . zen_get_module_sidebox_directory('search_header.php')); ?>
@@ -178,9 +206,23 @@ echo '<div class="header Fixed"><a href="#menu" title="Menu"><i class="fa fa-bar
    </li>
     <li class="last"><a href="<?php echo zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL'); ?>"><?php echo HEADER_TITLE_CHECKOUT; ?></a></li>
 <?php }?>
+      <?php
+      if($_SESSION['customer_id']){
+      ?>
+      <li class="last" style="color:green">
+              Welcome, <?php echo($_SESSION['customer_first_name'] . ' ' . $_SESSION['customer_last_name']); ?>
+        <?php
+    if($group_name!=''){
+        ?>
+          (<?php echo($group_name); ?>)
+        <?php } ?>
+      </li>
+          <?php
+      }
+          ?>
   </ul>
 <div id="navMainSearch" class="forward">
-     <?php require(DIR_WS_MODULES . zen_get_module_sidebox_directory('search_header.php')); ?>
+    <?php require(DIR_WS_MODULES . zen_get_module_sidebox_directory('search_header.php')); ?>
 </div>
 </div>
 </div>
