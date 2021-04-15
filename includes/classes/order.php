@@ -1176,8 +1176,8 @@ class order extends base {
 
     // -----
     // Send customer confirmation email unless observer overrides it.
-    //$send_customer_email = true;
-      $send_customer_email = false;
+    $send_customer_email = true;
+      // $send_customer_email = false;
       $this->notify('NOTIFY_ORDER_INVOICE_CONTENT_READY_TO_SEND', array('zf_insert_id' => $zf_insert_id, 'text_email' => $email_order, 'html_email' => $html_msg), $email_order, $html_msg, $send_customer_email);
     if ($send_customer_email === true) {
         zen_mail($this->customer['firstname'] . ' ' . $this->customer['lastname'], $this->customer['email_address'], EMAIL_TEXT_SUBJECT . EMAIL_ORDER_NUMBER_SUBJECT . $zf_insert_id, $email_order, STORE_NAME, EMAIL_FROM, $html_msg, 'checkout', $this->attachArray);
