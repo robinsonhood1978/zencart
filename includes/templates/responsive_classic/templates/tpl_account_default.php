@@ -18,6 +18,15 @@
 <div class="centerColumn group" id="accountDefault">
 
 <h1 id="accountDefaultHeading"><?php echo HEADING_TITLE; ?></h1>
+    <?php
+    if($group_name!=''){
+        ?>
+        <div class="alert alert-success">
+            <strong>NOTE:</strong> You are a member of the <?php echo($group_name); ?> group.
+        </div>
+        <?php
+    }
+    ?>
 <?php if ($messageStack->size('account') > 0) echo $messageStack->output('account'); ?>
 
 <?php
@@ -53,14 +62,7 @@
 </table>
 <?php
   }
-    if($group_name!=''){
-?>
-    <div class="alert alert-success">
-        <strong>NOTE:</strong> You are a member of the <?php echo($group_name); ?> group.
-    </div>
-    <?php
-  }
-  ?>
+    ?>
 <br class="clearBoth" />
 <div id="accountLinksWrapper" class="back">
 <h2><?php echo MY_ACCOUNT_TITLE; ?></h2>

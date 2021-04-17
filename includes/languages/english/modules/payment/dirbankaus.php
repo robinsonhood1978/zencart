@@ -49,7 +49,7 @@ $ln=$_SESSION['customer_last_name'];
   "\nCheques/Money Orders Payable To:   " . MODULE_PAYMENT_DIRBANKAUS_PAYABLE .
   '</pre><p>Thanks for your order which will ship immediately once we receive payment in the above account.');
 
-  define('MODULE_PAYMENT_DIRBANKAUS_TEXT_TITLE', 'Direct-Bank-Deposit, Cheques, Money Orders - Australian');
+  define('MODULE_PAYMENT_DIRBANKAUS_TEXT_TITLE', 'Australia Bank Deposit/Transfer Payment');
    define('MODULE_PAYMENT_DIRBANKAUS_TEXT_DESCRIPTION', 
   '<BR>Banking and Address details will be sent to your email once the order is confirmed.<br><pre>' . 
   '</pre><p>Thanks for your order which will ship immediately once we receive payment.');
