@@ -726,12 +726,24 @@ if (zen_get_categories_status($current_category_id) == 0 && $pInfo->products_sta
       ?>
     </div>
   </div>
-  <div class="form-group">
-      <?php echo zen_draw_label(TEXT_PRODUCTS_WEIGHT, 'products_weight', 'class="col-sm-3 control-label"'); ?>
-    <div class="col-sm-9 col-md-6">
-        <?php echo zen_draw_input_field('products_weight', $pInfo->products_weight, 'class="form-control" id="products_weight"'); ?>
+    <div class="form-group">
+        <?php echo zen_draw_label(TEXT_PRODUCTS_NET_WEIGHT, 'products_net_weight', 'class="col-sm-3 control-label"'); ?>
+        <div class="col-sm-9 col-md-6">
+            <?php echo zen_draw_input_field('products_net_weight', $pInfo->products_net_weight*1000, 'class="form-control" id="products_net_weight"'); ?>  &nbsp;&nbsp; G
+        </div>
     </div>
-  </div>
+    <div class="form-group">
+        <?php echo zen_draw_label(TEXT_PRODUCTS_WEIGHT, 'products_weight', 'class="col-sm-3 control-label"'); ?>
+        <div class="col-sm-9 col-md-6">
+            <?php echo zen_draw_input_field('products_weight', $pInfo->products_weight*1000, 'class="form-control" id="products_weight"'); ?>  &nbsp;&nbsp; G
+        </div>
+    </div>
+    <div class="form-group">
+        <?php echo zen_draw_label(TEXT_PRODUCTS_HANDLE_FEE, 'products_handle_fee', 'class="col-sm-3 control-label"'); ?>
+        <div class="col-sm-9 col-md-6">
+            <?php echo zen_draw_input_field('products_handle_fee', $pInfo->products_handle, 'class="form-control" id="products_handle"'); ?>
+        </div>
+    </div>
   <div class="form-group">
       <?php echo zen_draw_label(TEXT_PRODUCTS_SORT_ORDER, 'products_sort_order', 'class="col-sm-3 control-label"'); ?>
     <div class="col-sm-9 col-md-6">

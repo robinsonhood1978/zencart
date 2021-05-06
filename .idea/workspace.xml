@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/images/logo.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/images/logo.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/languages/english/modules/payment/dirbankaus.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/modules/payment/dirbankaus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_account_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_account_default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/document_product/collect_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/document_product/collect_info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/email/header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/email/header.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/languages/english/create_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/create_account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/payment/cc_via_migs.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/payment/cc_via_migs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/images/paypal-logo2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/images/paypal-logo2.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,6 +306,17 @@
       <workItem from="1618601128013" duration="504000" />
       <workItem from="1618609552708" duration="613000" />
       <workItem from="1618621595601" duration="519000" />
+      <workItem from="1619259994740" duration="1239000" />
+      <workItem from="1619261942931" duration="245000" />
+      <workItem from="1619487234911" duration="1136000" />
+      <workItem from="1619489205141" duration="452000" />
+      <workItem from="1619770593335" duration="488000" />
+      <workItem from="1619772579277" duration="1146000" />
+      <workItem from="1619774407297" duration="581000" />
+      <workItem from="1619948531858" duration="1867000" />
+      <workItem from="1619950595128" duration="824000" />
+      <workItem from="1620341547934" duration="97000" />
+      <workItem from="1620341714334" duration="264000" />
     </task>
     <servers />
   </component>

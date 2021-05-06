@@ -109,6 +109,7 @@
     font-family: Poppins-Regular;
     color: #666666;
     line-height: 1.1;
+    font-size: 14px;
     font-weight: unset !important;
 
     padding-top: 10px;
@@ -243,6 +244,7 @@ table tr {
 table th,
 table td {
     padding: 2px;
+    font-size: 13px;
     text-align: left;
 }
 

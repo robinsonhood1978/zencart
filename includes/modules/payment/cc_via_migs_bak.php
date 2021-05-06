@@ -69,7 +69,6 @@
 
 // Customise the following defined variable to the server hosted VPC URL if required
 define('MODULE_PAYMENT_MIGS_INTEGRATION_MODEL_SERVER_HOSTED_VPC_URL', 'https://migs.mastercard.com.au/vpcpay'); // Updated by Jay
-//define('MODULE_PAYMENT_MIGS_INTEGRATION_MODEL_SERVER_HOSTED_VPC_URL', 'http://www.laptopskeyboard.co.nz/testphp/vpc_verify_DR.php'); // Updated by Jay
 // define('MODULE_PAYMENT_MIGS_INTEGRATION_MODEL_SERVER_HOSTED_VPC_URL', 'https://migs.mastercard.com.au/ma/ANZAU');
 //define('MODULE_PAYMENT_MIGS_INTEGRATION_MODEL_MERCHANT_HOSTED_VPC_URL', 'https://migs.mastercard.com.au/vpcpay'); // Default Australian Virtual Payment Client
 
@@ -82,16 +81,13 @@ class cc_via_migs {
 	var $title;
 	var $description;
 	var $enabled;
-	var $prefix;
 
 	/**
 	 * Instantiates a new object of class 'cc_via_migs'
 	 * Initiates the Variables required for the payment module
 	 */
 	function cc_via_migs() {
-		 global $order;
-	
-	// Specify Object operation parameters
+		// Specify Object operation parameters
 		$this->code = 'cc_via_migs';
 		$this->title = (defined('MODULE_PAYMENT_MIGS_TEXT_TITLE') ? MODULE_PAYMENT_MIGS_TEXT_TITLE : 'Credit Card via MIGS'); // Change this for changing what appears on your site
 		$this->description = (defined('MODULE_PAYMENT_MIGS_TEXT_DESCRIPTION') ? MODULE_PAYMENT_MIGS_TEXT_DESCRIPTION : 'Payment module for MasterCard Internet Gateway Service (MIGS) based on both Integration Models');
@@ -115,10 +111,6 @@ class cc_via_migs {
 		// Contribution from Richard Lee Friday 7th October Begin
 		$this->sort_order = MODULE_PAYMENT_MIGS_SORT_ORDER;
 		// Contribution End
-		if ((int)MODULE_PAYMENT_MIGS_ORDER_STATUS_ID > 0) {
-        		$this->order_status = MODULE_PAYMENT_MIGS_ORDER_STATUS_ID;
-      		}
-		$this->prefix = MODULE_PAYMENT_MIGS_PREFIX;
 	}
 
 	/**
@@ -161,7 +153,7 @@ class cc_via_migs {
 	 */
 	function javascript_validation() {
 		// If operating as Merchant Hosted Web Payment Pages
-		if($this->isMerchantHosted()==1234) {
+		if($this->isMerchantHosted()) {
 			// Specify Javascript to validate the form elements
 			// Credits: OSCommerce Javascript Validation from cc.php
 			$js = '  if (payment_value == "' . $this->code . '") {' . "\n" .
@@ -192,7 +184,7 @@ class cc_via_migs {
 	 */
 	function selection() {
 		// If operating as Merchant Hosted Web Payment Pages
-		if($this->isMerchantHosted()==1234) {
+		if($this->isMerchantHosted()) {
 			// Specify the required form fields
       		global $order;
 			// Determine Expiry Month Field
@@ -228,7 +220,7 @@ class cc_via_migs {
 	 */
 	function pre_confirmation_check() {
 		// If operating as Merchant Hosted Web Payment Pages
-		if($this->isMerchantHosted()==1234) {
+		if($this->isMerchantHosted()) {
 			include (DIR_WS_CLASSES.'cc_validation.php');
 
 			// Perform validation through the cc_validation class
@@ -293,7 +285,7 @@ class cc_via_migs {
 	function process_button() {
 		global $_POST, $order;
 		// If Submitting through the Merchant-Hosted Payment
-		if($this->isMerchantHosted()==1234) {
+		if($this->isMerchantHosted()) {
 			// Create all the required fields to be sent to the action url
 			// (Defined on page 44 of VPCIG)
 			// Required Fields
@@ -304,7 +296,7 @@ class cc_via_migs {
 									 //zen_draw_hidden_field('vpc_AccessCode', $this->getAccessCode()) .
 									 zen_draw_hidden_field('vpc_Merchant', $this->getMerchantID()) .
 									 zen_draw_hidden_field('vpc_OrderInfo', $this->getCustId()) .
-									 zen_draw_hidden_field('vpc_anzExtendedOrderInfo',$this->prefix .'_' .$this->getCustName()) .
+									 //zen_draw_hidden_field('vpc_anzExtendedOrderInfo', $this->getCustName()) .
 									 //zen_draw_hidden_field('vpc_Amount', intval((number_format($order->info['total'])) * 100)); // Convert to Cents by Multiplying by 100
 									 zen_draw_hidden_field('vpc_CardNum', $this->cc_card_number) .
 									 zen_draw_hidden_field('vpc_CardExp', $_POST['cc_via_migs_cc_expires_year'] . $this->cc_expiry_month); // Optionally use: $_POST['cc_via_migs_cc_expires_month'] . $_POST['cc_via_migs_cc_expires_year']
@@ -334,7 +326,7 @@ class cc_via_migs {
 									 //zen_draw_hidden_field('vpc_AccessCode', $this->getAccessCode()) .
 									 zen_draw_hidden_field('vpc_Merchant', $this->getMerchantID()) .
 									 zen_draw_hidden_field('vpc_OrderInfo', $this->getCustId()) .
- 								     zen_draw_hidden_field('vpc_anzExtendedOrderInfo',$this->prefix .'_' .$this->getCustName()) .
+ 								     //zen_draw_hidden_field('vpc_anzExtendedOrderInfo', $this->getCustName()) .
 									 //zen_draw_hidden_field('vpc_Amount', intval((number_format($order->info['total'])) * 100)) // Convert to Cents by Multiplying by 100
 									 zen_draw_hidden_field('vpc_Locale', $this->getLocale()) .
 									 zen_draw_hidden_field('vpc_ReturnURL', $this->getReturnURL());
@@ -371,7 +363,7 @@ class cc_via_migs {
 		if(empty($_GET['vpc_ReceiptNo'])) { // Payment hasn't been processed
 			$verifiedHash = false;
 			// Determine how to process the transaction
-			if($this->isMerchantHosted()==1234) {
+			if($this->isMerchantHosted()) {
 				// TODO: Process the Merchant hosted requirements
 				$verifiedHash = true;
 				// Determine Required Fields
@@ -435,51 +427,26 @@ class cc_via_migs {
 				$_POST['vpc_AccessCode'] = $this->getAccessCode();
 //				$_POST['vpc_Amount'] = intval((number_format($order->info['total'])) * 100); // Convert to Cents by Multiplying by 100
 				$_POST['vpc_Amount'] = intval((round($order->info['total'],2)) * 100);
-				$_POST['vpc_Command'] = 'pay';
 
 				ksort($_POST);
 
 				// Get the URL and append the variables
 				$vpcURL = $this->getVPCUrl() . "?";
 				$secureSecret = $this->getSecretHash();
-				//$md5HashData = $secureSecret;
-				$hashinput = "";
+				$md5HashData = $secureSecret;
 				foreach($_POST as $key => $value) {
 					if(!empty($value)) { // Eliminate the empty variables
-						if ($key != "vpc_ReturnURL") {
 						$vpcURL .= urlencode($key) . '=' . urlencode($value) . '&';
-						//$md5HashData .= $value;	// Append to md5 hash data
-        					if ((strlen($value) > 0) && ((substr($key, 0,4)=="vpc_") || (substr($key,0,5) =="user_"))) {
-						$hashinput .= $key . "=" . $value . "&";
-
-						}
-						}
-						else {
-
-						$vpcURL .= urlencode($key) . '=' . urlencode($value) . '&';
-        					if ((strlen($value) > 0) && ((substr($key, 0,4)=="vpc_") || (substr($key,0,5) =="user_"))) {
-						$hashinput .= $key . "=" . $value . "&";
-
-						}
-
-						}
-
+						$md5HashData .= $value;	// Append to md5 hash data
 					}
 				}
-$hashinput = rtrim($hashinput, "&");
-//var_dump($hashinput);
-//echo "<br>";
-//var_dump($md5HashData);
-//echo "<br>";
 
 				// Calculate the Hash
 				// Handle mayOmmitHash privilege on the Server
 				// Change MODULE_PAYMENT_MIGS_MAY_OMMIT_HASH at top of file to toggle this function
 				if(!defined('MODULE_PAYMENT_MIGS_MAY_OMMIT_HASH') || MODULE_PAYMENT_MIGS_MAY_OMMIT_HASH == false) {
 					if(!empty($secureSecret)) {
-						//$vpcURL .= "vpc_SecureHash=" . strtoupper(md5($md5HashData));
-						//$vpcURL .= "vpc_SecureHash=" . strtoupper($md5HashData);
-						$vpcURL .= "vpc_SecureHash=" . strtoupper(hash_hmac('SHA256', $hashinput, pack('H*',$secureSecret))) ."&vpc_SecureHashType=SHA256";
+						$vpcURL .= "vpc_SecureHash=" . strtoupper(md5($md5HashData));
 					}
 				}
 
@@ -521,7 +488,7 @@ $hashinput = rtrim($hashinput, "&");
 			}
 		}
 		// Jay has suggested only sending this using merchant hosted payments 
-		if($verifiedHash == false && $this->isMerchantHosted()==1234) {
+		if($verifiedHash == false && $this->isMerchantHosted()) {
 			// Notify System Admin of the alteration or forgery by attempting to collect information from
 			// the user, such as their Customer ID, Order ID, IP etc, to double check records CC Merchant Account against
 			// incase the order was infact processed
@@ -605,9 +572,6 @@ $hashinput = rtrim($hashinput, "&");
 		$db->Execute("insert into " . TABLE_CONFIGURATION . " (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added) values ('Optional Notification Email Address', 'MODULE_PAYMENT_MIGS_EMAIL', '', 'You may optionally specify an email address to have payment error reported to such as Tampering Of Response and No Secure Hash Present notifications. By default if this is left empty the Site Admin will be notified', '6', '7', now())");
 		$db->Execute("insert into " . TABLE_CONFIGURATION . " (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, use_function, set_function, date_added) values ('Payment Zone', 'MODULE_PAYMENT_MIGS_VALID_ZONE', '0', 'If a zone is selected, only enable this payment method for that zone.', '6', '2', 'zen_get_zone_class_title', 'zen_cfg_pull_down_zone_classes(', now())");
 		$db->Execute("insert into " . TABLE_CONFIGURATION . " (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added) values ('Sort order of display', 'MODULE_PAYMENT_MIGS_SORT_ORDER', '0', 'Sort order of display. Lowest is displayed first.', '6', '2', now())");
-     $db->Execute("insert into " . TABLE_CONFIGURATION . " (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, set_function, use_function, date_added) values ('Set Order Status', 'MODULE_PAYMENT_MIGS_ORDER_STATUS_ID', '0', 'Set the status of orders made with this payment module to this value', '6', '0', 'zen_cfg_pull_down_order_statuses(', 'zen_get_order_status_name', now())");
-
-     $db->Execute("insert into " . TABLE_CONFIGURATION . " (configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added) values ('Set Prefix message', 'MODULE_PAYMENT_MIGS_PREFIX', '', 'Set the prefix message to each orders', '6', '0', now())");
 	}
 
 	/**
@@ -636,9 +600,7 @@ $hashinput = rtrim($hashinput, "&");
 					 'MODULE_PAYMENT_MIGS_SECRET_HASH',
 					 'MODULE_PAYMENT_MIGS_EMAIL',
 					 'MODULE_PAYMENT_MIGS_VALID_ZONE',
-					 'MODULE_PAYMENT_MIGS_SORT_ORDER',
-					'MODULE_PAYMENT_MIGS_ORDER_STATUS_ID',
-					'MODULE_PAYMENT_MIGS_PREFIX'
+					 'MODULE_PAYMENT_MIGS_SORT_ORDER'
 					 );
 	}
 
@@ -649,7 +611,6 @@ $hashinput = rtrim($hashinput, "&");
 	 * @return boolean Check condition whether integration is merchant-hosted
 	 */
 	function isMerchantHosted() {
-		return false; // Default to running Server Hosted
 		if(defined('MODULE_PAYMENT_MIGS_INTEGRATION_MODEL_MERCHANT_HOSTED')) {
 			return(strtoupper(MODULE_PAYMENT_MIGS_INTEGRATION_MODEL_MERCHANT_HOSTED) == 'TRUE');
 		}
@@ -784,10 +745,10 @@ $hashinput = rtrim($hashinput, "&");
 		// Todo: Set a way to match up the records
 		$uniqueKey = $customer_id . 'AT' . date("YmdHis");
 		// PREFIX the word 'test' to the merchant transaction reference if in Simulator infrastructure
-		if($this->isTestMode()) $prefix = 'test-';
+		if($this->isTestMode()) $prefix = 'test';
 		// TODO: Use a unique Transaction Reference Number for this order
 		$transactionReferenceNumber = $uniqueKey; // Should be based off a shopping cart number, an order number or and invoice number
-		return($this->prefix .'-' .$prefix .$transactionReferenceNumber);
+		return($prefix . $transactionReferenceNumber);
 	}
 
 	function getCustName(){
