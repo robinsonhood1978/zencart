@@ -11,6 +11,7 @@
  * @version $Id: DrByte 2020 May 19 Modified in v1.5.7 $
  */
 ?>
+
 <?php echo $payment_modules->javascript_validation(); ?>
 <div class="centerColumn" id="checkoutPayment">
 <?php echo zen_draw_form('checkout_payment', zen_href_link(FILENAME_CHECKOUT_CONFIRMATION, '', 'SSL'), 'post'); ?>
@@ -37,6 +38,98 @@
 <div class="floatingBox important forward"><?php echo TEXT_SELECTED_BILLING_DESTINATION; ?></div>
 <br class="clearBoth">
 <br>
+
+          <table id="cartContentsDisplay">
+              <tr class="tableHeading">
+                  <th scope="col" id="scQuantityHeading"><?php echo TABLE_HEADING_QUANTITY; ?></th>
+                  <th scope="col" id="scUpdateQuantity">&nbsp;</th>
+                  <th scope="col" id="scProductsHeading"><?php echo TABLE_HEADING_PRODUCTS; ?></th>
+                  <th scope="col" id="scUnitHeading"><?php echo TABLE_HEADING_PRICE; ?></th>
+                  <th scope="col" id="scTotalHeading"><?php echo TABLE_HEADING_TOTAL; ?></th>
+                  <th scope="col" id="scRemoveHeading">&nbsp;</th>
+              </tr>
+              <!-- Loop through all products /-->
+              <?php
+              foreach ($productArray as $product) {
+                  ?>
+                  <tr class="<?php echo $product['rowClass']; ?>">
+
+                      <?php if ( $detect->isMobile() && !$detect->isTablet() || $_SESSION['layoutType'] == 'mobile' ) {
+                          //
+                      } else { ?>
+
+                          <td class="cartQuantity">
+                              <?php
+                              if ($product['flagShowFixedQuantity']) {
+                                  echo $product['showFixedQuantityAmount'];
+                              } else {
+                                  // echo $product['quantityField'];
+                                  echo $product['showFixedQuantityAmount'];
+                              }
+                              ?><br />
+                              <span class="alert bold"><?php echo $product['flagStockCheck'];?></span><br />
+                              <br /><?php echo $product['showMinUnits']; ?>
+                          </td>
+
+                          <td class="cartQuantityUpdate"></td>
+                      <?php } ?>
+
+
+
+                      <td class="cartProductDisplay">
+
+                          <a href="<?php echo $product['linkProductsName']; ?>"><span class="cartImage back"><?php echo $product['productsImage']; ?></span><span class="cartProdTitle"><?php echo $product['productsName'] . '<span class="alert bold">' . $product['flagStockCheck'] . '</span>'; ?></span></a>
+                          <br class="clearBoth" />
+                          <?php
+                          echo $product['attributeHiddenField'];
+                          if (isset($product['attributes']) && is_array($product['attributes'])) {
+                              echo '<div class="cartAttribsList">';
+                              echo '<ul>';
+                              foreach ($product['attributes'] as $option => $value) {
+                                  ?>
+
+                                  <li><?php echo $value['products_options_name'] . TEXT_OPTION_DIVIDER . nl2br($value['products_options_values_name']); ?></li>
+
+                                  <?php
+                              }
+                              echo '</ul>';
+                              echo '</div>';
+                          }
+                          ?>
+                      </td>
+
+                      <?php if ( $detect->isMobile() && !$detect->isTablet() || $_SESSION['layoutType'] == 'mobile' ) { ?>
+
+                          <td class="cartQuantity">
+                              <?php
+                              if ($product['flagShowFixedQuantity']) {
+                                  echo $product['showFixedQuantityAmount'] . '<br /><span class="alert bold">' . $product['flagStockCheck'] . '</span><br /><br />' . $product['showMinUnits'];
+                              } else {
+                                  echo $product['quantityField'] . '<br /><span class="alert bold">' . $product['flagStockCheck'] . '</span><br /><br />' . $product['showMinUnits'];
+                              }
+                              ?>
+                          </td>
+                          <td class="cartQuantityUpdate"></td>
+
+                      <?php  } else {
+
+                      }  ?>
+
+
+                      <td class="cartUnitDisplay"><?php if ($display_as_mobile) { echo '<b class="hide">' . TABLE_HEADING_PRICE . '&#58;&nbsp;&nbsp;</b>'; } ?><?php echo $product['productsPriceEach']; ?></td>
+                      <td class="cartTotalDisplay"><?php if ($display_as_mobile) { echo '<b class="hide">' . TABLE_HEADING_TOTAL . '&#58;&nbsp;&nbsp;</b>'; } ?><?php echo $product['productsPrice']; ?></td>
+                      <td class="cartRemoveItemDisplay">
+
+                      </td>
+                  </tr>
+                  <?php
+              } // end foreach ($productArray as $product)
+              ?>
+              <!-- Finished loop through all products /-->
+          </table>
+
+          <br class="clearBoth">
+          <br>
 <?php // ** BEGIN PAYPAL EXPRESS CHECKOUT **
       }
       // ** END PAYPAL EXPRESS CHECKOUT ** ?>
@@ -107,6 +200,7 @@
 
   if (sizeof($selection) > 1) {
 ?>
+
 <p class="important"><?php echo TEXT_SELECT_PAYMENT_METHOD; ?></p>
 <?php
   } elseif (sizeof($selection) == 0) {

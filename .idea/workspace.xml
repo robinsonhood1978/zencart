@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/document_product/collect_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/document_product/collect_info.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/email/header.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/email/header.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/languages/english/create_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/create_account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/modules/payment/cc_via_migs.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/payment/cc_via_migs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/table.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/images/paypal-logo2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/images/paypal-logo2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/functions/functions_general.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/functions/functions_general.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/checkout_payment/header_php.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/checkout_payment/header_php.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/checkout_shipping/header_php.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/checkout_shipping/header_php.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/responsive_classic/product_listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/responsive_classic/product_listing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_checkout_payment_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_checkout_payment_default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_checkout_shipping_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_checkout_shipping_default.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -316,7 +317,9 @@
       <workItem from="1619948531858" duration="1867000" />
       <workItem from="1619950595128" duration="824000" />
       <workItem from="1620341547934" duration="97000" />
-      <workItem from="1620341714334" duration="264000" />
+      <workItem from="1620341714334" duration="410000" />
+      <workItem from="1620775087751" duration="2207000" />
+      <workItem from="1620873376056" duration="11529000" />
     </task>
     <servers />
   </component>

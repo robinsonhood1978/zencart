@@ -151,7 +151,7 @@ if ($listing_split->number_of_rows > 0) {
         $zco_notifier->notify('NOTIFY_MODULES_PRODUCT_LISTING_PRODUCTS_BUTTON', array(), $listing->fields, $lc_button);
 
         $the_button = $lc_button;
-        $products_link = '<a class="list-more" href="' . zen_href_link(zen_get_info_page($listing->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($linkCpath) . '&products_id=' . $listing->fields['products_id']) . '">' . MORE_INFO_TEXT . '</a>';
+        $products_link = '<div style="width:50%;margin:8% 0 0 30%;"><a class="list-more" href="' . zen_href_link(zen_get_info_page($listing->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($linkCpath) . '&products_id=' . $listing->fields['products_id']) . '">' . MORE_INFO_TEXT . '</a></div>';
         $lc_text .= '' . zen_get_buy_now_button($listing->fields['products_id'], $the_button, $products_link) . '' . zen_get_products_quantity_min_units_display($listing->fields['products_id']);
         $lc_text .= '' . (zen_get_show_product_switch($listing->fields['products_id'], 'ALWAYS_FREE_SHIPPING_IMAGE_SWITCH') ? (zen_get_product_is_always_free_shipping($listing->fields['products_id']) ? TEXT_PRODUCT_FREE_SHIPPING_ICON . '' : '') : '');
 

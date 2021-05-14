@@ -878,7 +878,7 @@ function zen_set_field_length($tbl, $fld, $max = 70)
       break;
     }
     if ($return_button != $link and $additional_link != false) {
-      return $additional_link . '<br />' . $return_button;
+      return $additional_link . '<br /><div style="margin:0 0 0 25%;">' . $return_button . '</div>';
     } else {
       return $return_button;
     }
