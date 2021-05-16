@@ -42,11 +42,9 @@
           <table id="cartContentsDisplay">
               <tr class="tableHeading">
                   <th scope="col" id="scQuantityHeading"><?php echo TABLE_HEADING_QUANTITY; ?></th>
-                  <th scope="col" id="scUpdateQuantity">&nbsp;</th>
                   <th scope="col" id="scProductsHeading"><?php echo TABLE_HEADING_PRODUCTS; ?></th>
                   <th scope="col" id="scUnitHeading"><?php echo TABLE_HEADING_PRICE; ?></th>
                   <th scope="col" id="scTotalHeading"><?php echo TABLE_HEADING_TOTAL; ?></th>
-                  <th scope="col" id="scRemoveHeading">&nbsp;</th>
               </tr>
               <!-- Loop through all products /-->
               <?php
@@ -70,8 +68,6 @@
                               <span class="alert bold"><?php echo $product['flagStockCheck'];?></span><br />
                               <br /><?php echo $product['showMinUnits']; ?>
                           </td>
-
-                          <td class="cartQuantityUpdate"></td>
                       <?php } ?>
 
 
@@ -118,9 +114,6 @@
 
                       <td class="cartUnitDisplay"><?php if ($display_as_mobile) { echo '<b class="hide">' . TABLE_HEADING_PRICE . '&#58;&nbsp;&nbsp;</b>'; } ?><?php echo $product['productsPriceEach']; ?></td>
                       <td class="cartTotalDisplay"><?php if ($display_as_mobile) { echo '<b class="hide">' . TABLE_HEADING_TOTAL . '&#58;&nbsp;&nbsp;</b>'; } ?><?php echo $product['productsPrice']; ?></td>
-                      <td class="cartRemoveItemDisplay">
-
-                      </td>
                   </tr>
                   <?php
               } // end foreach ($productArray as $product)

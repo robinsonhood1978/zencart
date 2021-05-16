@@ -11,6 +11,7 @@ define('NAVBAR_TITLE_1', 'Checkout');
 define('NAVBAR_TITLE_2', 'Shipping Method');
 
 define('HEADING_TITLE', 'Step 1 of 3 - Delivery Information');
+define('TABLE_HEADING_PRICE','Unit');
 
 define('TABLE_HEADING_SHIPPING_ADDRESS', 'Shipping Address');
 define('TEXT_CHOOSE_SHIPPING_DESTINATION', 'Your order will be shipped to the address at the left or you may change the shipping address by clicking the <em>Change Address</em> button.');

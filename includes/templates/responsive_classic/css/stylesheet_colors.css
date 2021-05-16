@@ -73,7 +73,12 @@ input, TEXTAREA{border:3px solid #ccc;}
 #cartBoxListWrapper li, .orderHistList li, ul.list-links li{border-bottom:3px solid #f5f5f5;}
 ol.list-links li{border-bottom:1px solid #ddd;}
 #shoppingcartContent hr{border-bottom:3px solid #666;}
-.tableHeading TH {border-bottom:1px solid #ccc;}
+.tableHeading TH {
+    border-bottom:1px solid #ccc;
+    border:solid 1px #cccccc;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 #cartSubTotal {border-top: 3px solid #ddd;}
 #productQuantityDiscounts td{border-right:1px solid #eee;}
 #seQuoteResults td, .listBoxContentTable td, .tableBorder1 td {border: 1px solid #000;}
