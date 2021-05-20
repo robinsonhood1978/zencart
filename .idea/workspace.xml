@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/css/chosen.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/javascript/chosen.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/javascript/jquery_new.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/languages/english/checkout_payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/checkout_payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/languages/english/checkout_shipping.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/checkout_shipping.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet_colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet_colors.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_checkout_payment_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_checkout_payment_default.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_checkout_shipping_default.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_checkout_shipping_default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/coupon_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/coupon_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/gv_mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/gv_mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/also_purchased_products.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/also_purchased_products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/responsive_default.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/responsive_default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/responsive_mobile.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/responsive_mobile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet_css_buttons.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet_css_buttons.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +40,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/includes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Scalp-zzF-Serve/includes/javascript" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -51,6 +57,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Scalp-zzF-Serve/includes/javascript" />
+      <recent name="$PROJECT_DIR$/Scalp-zzF-Serve/includes/css" />
       <recent name="D:\phpstudy_pro\html\Scalp-zzF-Serve" />
       <recent name="D:\phpstudy_pro\html\Scalp-zzF-Serve\includes\functions" />
     </key>
@@ -319,6 +327,7 @@
       <workItem from="1620775087751" duration="2207000" />
       <workItem from="1620873376056" duration="11529000" />
       <workItem from="1621202874225" duration="2581000" />
+      <workItem from="1621327001814" duration="18839000" />
     </task>
     <servers />
   </component>

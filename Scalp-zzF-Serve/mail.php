@@ -104,6 +104,9 @@ if ($action == 'preview') {
   <head>
     <meta charset="<?php echo CHARSET; ?>">
     <title><?php echo TITLE; ?></title>
+      <link rel="stylesheet" href="includes/css/chosen/style.css">
+      <link rel="stylesheet" href="includes/css/chosen/prism.css">
+      <link rel="stylesheet" href="includes/css/chosen/chosen.css">
     <link rel="stylesheet" type="text/css" href="includes/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="includes/cssjsmenuhover.css" media="all" id="hoverJS">
     <script src="includes/menu.js"></script>
@@ -279,7 +282,16 @@ if ($action == 'preview') {
             ?>
           <div class="form-group">
               <?php echo zen_draw_label(TEXT_CUSTOMER, 'customers_email_address', 'class="col-sm-3 control-label"'); ?>
-            <div class="col-sm-9"><?php echo zen_draw_pull_down_menu('customers_email_address', $customers, (isset($_GET['customer']) ? zen_output_string_protected($_GET['customer']) : ''), 'class="form-control"');  //, 'multiple'        ?></div>
+            <div class="col-sm-9">
+                <select id="customers_email_address" class="chosen-select" name="customers_email_address">
+                    <?php
+                    foreach ($customers as $i => $value) {
+                        ?>
+                        <option value="<?php echo($value['id'])?>" <?php if(isset($_GET['customer']) && $value['id'] ==
+                            $_GET['customer']){echo('selected="selected"');}?>><?php echo($value['text'])?></option>
+                    <?php } ?>
+                </select>
+            </div>
           </div>
           <div class="form-group">
               <?php echo zen_draw_label(TEXT_FROM, 'from', 'class="col-sm-3 control-label"'); ?>
@@ -346,6 +358,9 @@ if ($action == 'preview') {
     <!-- footer //-->
     <?php require(DIR_WS_INCLUDES . 'footer.php'); ?>
     <!-- footer_eof //-->
+    <script src="includes/css/chosen/chosen.jquery.js" type="text/javascript"></script>
+    <script src="includes/css/chosen/prism.js" type="text/javascript" charset="utf-8"></script>
+    <script src="includes/css/chosen/init.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
 <?php require(DIR_WS_INCLUDES . 'application_bottom.php'); ?>

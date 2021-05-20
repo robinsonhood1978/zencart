@@ -275,7 +275,7 @@ span.cartProdTitle{text-align:left;float:left;margin-top:15px;width:70%;}
 #shoppingCartDefault .forward{float:none;}
 #shoppingCartDefault .buttonRow{text-align:center;}
 span.cssButton.normal_button.button.button_checkout, .button_checkout:hover{text-align:center;}
-span.cssButton.normal_button.button.button_continue_shopping, .button_continue_shopping:hover, span.cssButton.normal_button.button.button_shipping_estimator, .button_shipping_estimator:hover{display:block;padding:12px;text-align:center;}
+span.cssButton.normal_button.button.button_continue_shopping, .button_continue_shopping:hover, span.cssButton.normal_button.button.button_shipping_estimator, .button_shipping_estimator:hover{display:block;padding:2px;text-align:center;}
 .cartTotalsDisplay{padding:10px 0;background:#333;color:#fff;margin-top:20px;}
 .cartRemoveItemDisplay input[type=checkbox]{display:none;}
 

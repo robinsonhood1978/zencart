@@ -442,6 +442,9 @@ switch ($_GET['action']) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET; ?>">
 <title><?php echo TITLE; ?></title>
+    <link rel="stylesheet" href="includes/css/chosen/style.css">
+    <link rel="stylesheet" href="includes/css/chosen/prism.css">
+    <link rel="stylesheet" href="includes/css/chosen/chosen.css">
 <link rel="stylesheet" type="text/css" href="includes/stylesheet.css">
 <link rel="stylesheet" type="text/css" href="includes/cssjsmenuhover.css" media="all" id="hoverJS">
 <script type="text/javascript" src="includes/menu.js"></script>
@@ -851,7 +854,16 @@ function check_form(form_name) {
 ?>
               <tr>
                 <td class="main"><?php echo TEXT_CUSTOMER; ?>&nbsp;&nbsp;</td>
-                <td><?php echo zen_draw_pull_down_menu('customers_email_address', $customers, (isset($_GET['customer']) ? $_GET['customer'] : ''));?></td>
+                <td>
+                    <select id="customers_email_address" class="chosen-select" name="customers_email_address">
+                        <?php
+                        foreach ($customers as $i => $value) {
+                            ?>
+                            <option value="<?php echo($value['id'])?>" <?php if(isset($_GET['customer']) && $value['id'] ==
+                                $_GET['customer']){echo('selected="selected"');}?>><?php echo($value['text'])?></option>
+                        <?php } ?>
+                    </select>
+                </td>
               </tr>
               <tr>
                 <td colspan="2"><?php echo zen_draw_separator('pixel_trans.gif', '1', '10'); ?></td>
@@ -1545,6 +1557,9 @@ $category_query = $db->Execute("SELECT * FROM " . TABLE_COUPON_RESTRICT . " WHER
 <!-- footer //-->
 <?php require(DIR_WS_INCLUDES . 'footer.php'); ?>
 <!-- footer_eof //-->
+        <script src="includes/css/chosen/chosen.jquery.js" type="text/javascript"></script>
+        <script src="includes/css/chosen/prism.js" type="text/javascript" charset="utf-8"></script>
+        <script src="includes/css/chosen/init.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
 <?php require(DIR_WS_INCLUDES . 'application_bottom.php'); ?>
