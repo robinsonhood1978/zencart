@@ -122,7 +122,17 @@ require($template->get_template_dir('/tpl_products_next_previous.php',DIR_WS_TEM
   <tr>
       <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_DIMENSION ?></b> </td><td class="main" align="left"><?php echo $dimension ?></td>
   </tr>
-        <?php } ?>
+        <?php }
+  if (!empty($capacity)){?>
+      <tr>
+          <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_CAPACITY ?></b> </td><td class="main" align="left"><?php echo $capacity ?></td>
+      </tr>
+  <?php }
+  if (!empty($voltage)){?>
+      <tr>
+          <td class="main" align="left"><b>&nbsp;&nbsp;<?php echo TEXT_PRODUCT_VOLTAGE ?></b> </td><td class="main" align="left"><?php echo $voltage ?></td>
+      </tr>
+  <?php } ?>
         </tbody>
     </table>
 <?php

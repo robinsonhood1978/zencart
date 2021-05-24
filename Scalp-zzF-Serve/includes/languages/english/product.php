@@ -32,6 +32,8 @@ define('TEXT_PRODUCTS_TYPE', 'Products Type:');
 define('TEXT_PRODUCTS_CONDITION', 'Condition:');
 define('TEXT_PRODUCTS_COLOR', 'Color:');
 define('TEXT_PRODUCTS_DIMENSION', 'Dimension:');
+define('TEXT_PRODUCTS_CAPACITY', 'Capacity:');
+define('TEXT_PRODUCTS_VOLTAGE', 'Voltage:');
 define('TEXT_PRODUCTS_PART_COM', 'Part No. Compatibility:');
 define('TEXT_PRODUCTS_MODEL_COM', 'Model Compatibility:');
 

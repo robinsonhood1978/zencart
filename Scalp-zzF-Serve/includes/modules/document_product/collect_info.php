@@ -33,6 +33,8 @@ $parameters = array(
     'products_show_warranty' => '',
     'products_show_disclaimer' => '',
     'products_dimension' => '',
+    'capacity' => '',
+    'voltage' => '',
     'products_net_weight' => '0',
     'products_handle' => '0',
   'products_quantity_order_min' => '1',
@@ -54,7 +56,7 @@ $parameters = array(
 $pInfo = new objectInfo($parameters);
 
 if (isset($_GET['pID']) && empty($_POST)) {
-    $product = $db->Execute("SELECT pe.type_id, pe.condition_id, pe.color_id, pe.products_dimension,pe.products_show_part,pe.products_show_model,pe.products_show_warranty,pe.products_show_disclaimer, pe.products_net_weight, pe.products_handle, pd.products_name, pd.products_description, pd.products_url,
+    $product = $db->Execute("SELECT pe.type_id, pe.condition_id, pe.color_id, pe.products_dimension,pe.capacity,pe.voltage,pe.products_show_part,pe.products_show_model,pe.products_show_warranty,pe.products_show_disclaimer, pe.products_net_weight, pe.products_handle, pd.products_name, pd.products_description, pd.products_url,
                                   p.*, 
                                   date_format(p.products_date_available, '" .  zen_datepicker_format_forsql() . "') as products_date_available
                            FROM " . TABLE_PRODUCTS . " p left join
@@ -348,6 +350,20 @@ if (zen_get_categories_status($current_category_id) == 0 && $pInfo->products_sta
         <?php echo zen_draw_label(TEXT_PRODUCTS_DIMENSION, 'products_dimension', 'class="col-sm-3 control-label"'); ?>
         <div class="col-sm-9 col-md-6">
             <?php echo zen_draw_input_field('products_dimension', htmlspecialchars(stripslashes($pInfo->products_dimension), ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_PRODUCTS_EXT, 'products_dimension') . ' class="form-control" id="products_dimension"'); ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo zen_draw_label(TEXT_PRODUCTS_CAPACITY, 'capacity', 'class="col-sm-3 control-label"'); ?>
+        <div class="col-sm-9 col-md-6">
+            <?php echo zen_draw_input_field('capacity', htmlspecialchars(stripslashes($pInfo->capacity), ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_PRODUCTS_EXT, 'capacity') . ' class="form-control" id="capacity"'); ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo zen_draw_label(TEXT_PRODUCTS_VOLTAGE, 'voltage', 'class="col-sm-3 control-label"'); ?>
+        <div class="col-sm-9 col-md-6">
+            <?php echo zen_draw_input_field('voltage', htmlspecialchars(stripslashes($pInfo->voltage), ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_PRODUCTS_EXT, 'voltage') . ' class="form-control" id="voltage"'); ?>
         </div>
     </div>
 

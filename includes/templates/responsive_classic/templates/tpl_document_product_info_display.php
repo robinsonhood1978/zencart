@@ -93,6 +93,10 @@
                     echo (!empty($pcolors_name) ? '<li>' . TEXT_COLORS_NAME . $pcolors_name . '</li>' : '') . "\n"; ?>
                     <?php
                     echo (!empty($dimension) ? '<li>' . TEXT_PRODUCT_DIMENSION . $dimension . '</li>' : '') . "\n"; ?>
+                    <?php
+                    echo (!empty($capacity) ? '<li>' . TEXT_PRODUCTS_CAPACITY . $capacity . '</li>' : '') . "\n"; ?>
+                    <?php
+                    echo (!empty($voltage) ? '<li>' . TEXT_PRODUCTS_VOLTAGE . $voltage . '</li>' : '') . "\n"; ?>
 
                 </ul>
                 <?php

@@ -62,6 +62,8 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
         'products_show_warranty' => (int)$_POST['products_show_warranty'],
         'products_show_disclaimer' => (int)$_POST['products_show_disclaimer'],
         'products_dimension' => $_POST['products_dimension'],
+        'capacity' => $_POST['capacity'],
+        'voltage' => $_POST['voltage'],
         'products_net_weight' => convertToFloat($_POST['products_net_weight']/1000),
         'products_handle' => (int)$_POST['products_handle_fee']
     );
