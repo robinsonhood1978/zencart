@@ -19,6 +19,8 @@ define('TEXT_PRODUCT_TYPE', 'Products Type: ');
 define('TEXT_CONDITION_DESCRIPTION', 'Condition: ');
 define('TEXT_COLORS_NAME', 'Color: ');
 define('TEXT_PRODUCT_DIMENSION', 'Dimension: ');
+define('TEXT_PRODUCT_CAPACITY', 'Capacity: ');
+define('TEXT_PRODUCT_VOLTAGE', 'Voltage: ');
 define('TEXT_PRODUCT_NET_WEIGHT', 'Net Weight: ');
 define('TEXT_PRODUCT_HANDLE_FEE', 'Handle Fee: ');
 

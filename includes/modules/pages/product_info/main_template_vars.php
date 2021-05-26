@@ -45,6 +45,8 @@
     $condition_description= zen_get_products_condition_description((int)$_GET['products_id']);
     $pcolors_name= zen_get_products_color((int)$_GET['products_id']);
     $dimension = $product_ext_info->fields['products_dimension'];
+    $capacity = $product_ext_info->fields['capacity'];
+    $voltage = $product_ext_info->fields['voltage'];
     $net_weight = $product_ext_info->fields['products_net_weight'];
     $handle_fee = $product_ext_info->fields['products_handle'];
     $products_warranty = zen_get_product_extro_msg('w',$product_ext_info->fields['products_show_warranty']);
