@@ -23,6 +23,9 @@ if (zen_not_null($action)) {
       $msg_id = zen_db_prepare_input($_POST['msg_id']);
       $message_text = htmlspecialchars_decode(zen_db_prepare_input($_POST['message_text']));
       $message_group = zen_db_prepare_input($_POST['message_group']);
+      if($msg_id===''){
+          $msg_id = 0;
+      }
 
       $sql_data_array = array(
         'description' => $description,

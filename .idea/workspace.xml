@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/product/collect_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/product/collect_info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/languages/english/product_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/product_info.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/modules/pages/product_info/main_template_vars.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/product_info/main_template_vars.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/products_extra_message.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/products_extra_message.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,6 +322,7 @@
       <workItem from="1621327001814" duration="19054000" />
       <workItem from="1621844048263" duration="3997000" />
       <workItem from="1621986345212" duration="3331000" />
+      <workItem from="1622007121343" duration="5636000" />
     </task>
     <servers />
   </component>
