@@ -33,7 +33,7 @@
       }
 
       if (PRODUCT_FEATURED_LIST_NAME != '0') {
-        $display_products_name = '<div class="itemTitle"><a href="' . zen_href_link(zen_get_info_page($featured_products->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($featured_products->fields['master_categories_id']) . '&products_id=' . $featured_products->fields['products_id']) . '">' . $featured_products->fields['products_name'] . '</a></div>' . str_repeat('<br />', substr(PRODUCT_FEATURED_LIST_NAME, 3, 1));
+        $display_products_name = '<div class="itemTitle" style="font-size: 120%;"><a href="' . zen_href_link(zen_get_info_page($featured_products->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($featured_products->fields['master_categories_id']) . '&products_id=' . $featured_products->fields['products_id']) . '">' . $featured_products->fields['products_name'] . '</a></div>' . str_repeat('<br />', substr(PRODUCT_FEATURED_LIST_NAME, 3, 1));
       } else {
         $display_products_name = '';
       }

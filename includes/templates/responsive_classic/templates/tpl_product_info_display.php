@@ -238,7 +238,7 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 
 <!--bof Product description -->
 <?php if ($products_description != '') { ?>
-<div id="productDescription" class="productGeneral biggerText"><?php echo stripslashes($products_description); ?></div>
+<div id="productDescription" class="productGeneral biggerText" style="color: #364fb5;border: 1px solid #90C3F6;margin-bottom: 15px;padding: 5px;"><?php echo stripslashes($products_description); ?></div>
 <?php } ?>
 <!--eof Product description -->
 

@@ -202,7 +202,7 @@
 
     <!--bof Product description -->
     <?php if ($products_description != '') { ?>
-        <div id="productDescription" class="productGeneral biggerText"><?php echo stripslashes($products_description); ?></div>
+        <div id="productDescription" class="productGeneral biggerText" style="border: 1px solid #90C3F6;margin-bottom: 15px;padding: 5px;"><?php echo stripslashes($products_description); ?></div>
     <?php } ?>
     <!--eof Product description -->
 
