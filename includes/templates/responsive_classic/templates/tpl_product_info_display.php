@@ -236,6 +236,7 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 
 
 
+
 <!--bof Product description -->
 <?php if ($products_description != '') { ?>
 <div id="productDescription" class="productGeneral biggerText" style="color: #364fb5;border: 1px solid #90C3F6;margin-bottom: 15px;padding: 5px;"><?php echo stripslashes($products_description); ?></div>
@@ -282,7 +283,7 @@ if (CUSTOMERS_APPROVAL == 3 and TEXT_LOGIN_FOR_PRICE_BUTTON_REPLACE_SHOWROOM == 
 
     <br/>
     <?php if ($products_disclaimer_msg != '') { ?>
-        <div id="productDisclaimerMsg" class="productGeneral biggerText" style="border: 1px solid #90C3F6;margin-bottom: 15px;padding: 5px;"><?php echo stripslashes($products_disclaimer_msg); ?></div>
+        <div id="productDisclaimerMsg" class="productGeneral" style="border: 1px solid #90C3F6;margin-bottom: 15px;padding: 5px;"><?php echo stripslashes($products_disclaimer_msg); ?></div>
     <?php } ?>
 <!--bof Prev/Next bottom position -->
 <?php if (PRODUCT_INFO_PREVIOUS_NEXT == 2 or PRODUCT_INFO_PREVIOUS_NEXT == 3) { ?>
