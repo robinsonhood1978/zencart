@@ -1,4 +1,4 @@
-body {background-color:#ffffff; color:#000000; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:center; width:552px;/*logo width+border*/}
+body {background-color:#ffffff; color:#000000; font-family:Verdana, Arial, Helvetica, sans-serif; text-align:center; /*logo width+border*/}
 a:link {color:#0066cc;}
 a:hover {background-color:#eeeecc; color:#0066cc;}
 a:visited {color:#0066cc;}
@@ -7,8 +7,8 @@ a:visited {color:#0066cc;}
 .content {font-size:10px; padding:5px;}
 .content-line {padding:5px;}
 #checkout .content-line { font-size: 10px; }
-.footer {border-top:1px solid #9a9a9a; font-size:9px; margin-top:10px; text-align:center;}
-.disclaimer {background-color:#f9f9f9; border:1px solid #cccccc; font-size:10px; margin-top:10px;}
+.footer {width:542px;border-top:1px solid #9a9a9a; font-size:9px; margin-top:10px; text-align:center;}
+.disclaimer {width:542px;background-color:#f9f9f9; border:1px solid #cccccc; font-size:10px; margin-top:10px;}
 .disclaimer1 {color:#666666; padding:5px;}
 .disclaimer1 a:link {color:#666666;}
 .disclaimer1 a:visited {color:#666666;}
@@ -32,7 +32,7 @@ a:visited {color:#0066cc;}
 .order-totals-text {font-size:10px; font-weight:bold;}
 .order-totals-num {font-size:10px; }
 .comments {background-color:#FF6699; border:1px #9a9a9a; width:542px; padding:2px; font-size:10px; }
-.address-block {background-color:#E4E8F3; border:1px solid #9a9a9a; margin-top:3px;}
+.address-block {width:542px;background-color:#E4E8F3; border:1px solid #9a9a9a; margin-top:3px;}
 .address {font-size:10px;}
 .payment-detail, .payment-footer {font-size:10px;}
 .delivery-block, .billing_block { width: 50%; vertical-align: top; }
