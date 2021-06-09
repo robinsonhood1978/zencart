@@ -668,6 +668,10 @@ class order extends base {
       $this->info['cc_number'] = str_pad($cStart, 6, 'X') . $cEnd;
     };
 
+      $orderNum = $db->Execute("SELECT COUNT(*) AS order_id FROM " . TABLE_ORDERS );
+//      print_r($orderNum);
+//      exit();
+
     $sql_data_array = array('customers_id' => $_SESSION['customer_id'],
                             'customers_name' => $this->customer['firstname'] . ' ' . $this->customer['lastname'],
                             'customers_company' => $this->customer['company'],
@@ -1071,7 +1075,7 @@ class order extends base {
     $html_msg['EMAIL_THANKS_FOR_SHOPPING'] = EMAIL_THANKS_FOR_SHOPPING;
     $html_msg['EMAIL_DETAILS_FOLLOW']  = EMAIL_DETAILS_FOLLOW;
     $html_msg['INTRO_ORDER_NUM_TITLE'] = EMAIL_TEXT_ORDER_NUMBER;
-    $html_msg['INTRO_ORDER_NUMBER']    = $zf_insert_id;
+    $html_msg['INTRO_ORDER_NUMBER']    = sprintf("KB%06d", $zf_insert_id);
     $html_msg['INTRO_DATE_TITLE']      = EMAIL_TEXT_DATE_ORDERED;
     $html_msg['INTRO_DATE_ORDERED']    = strftime(DATE_FORMAT_LONG);
     $html_msg['INTRO_URL_TEXT']        = EMAIL_TEXT_INVOICE_URL_CLICK;

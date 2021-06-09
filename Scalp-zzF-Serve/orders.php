@@ -679,7 +679,7 @@ if (zen_not_null($action) && $order_exists == true) {
           </div>
         </div>
         <div class="row"><?php echo zen_draw_separator('pixel_trans.gif', '1', '10'); ?></div>
-        <div class="row"><strong><?php echo ENTRY_ORDER_ID . $oID; ?></strong></div>
+        <div class="row"><strong><?php echo ENTRY_ORDER_ID . sprintf("KB%06d", $oID); ?></strong></div>
         <div class="row">
           <table>
             <tr>
@@ -1276,7 +1276,7 @@ if (zen_not_null($action) && $order_exists == true) {
                     $product_details = preg_replace('~<hr>$~', '', $product_details); // remove last HR
                     $product_details = nl2br($product_details);
                     ?>
-                <td class="dataTableContent text-center"><?php echo $show_difference . $orders->fields['orders_id']; ?></td>
+                <td class="dataTableContent text-center"><?php echo $show_difference . sprintf("KB%06d", $orders->fields['orders_id']); ?></td>
                 <td class="dataTableContent"><?php echo $show_payment_type; ?></td>
                 <td class="dataTableContent"><?php echo '<a href="' . zen_href_link(FILENAME_CUSTOMERS, 'cID=' . $orders->fields['customers_id'], 'NONSSL') . '">' . zen_image(DIR_WS_ICONS . 'preview.gif', ICON_PREVIEW . ' ' . TABLE_HEADING_CUSTOMERS) . '</a>&nbsp;' . $orders->fields['customers_name'] . ($orders->fields['customers_company'] != '' ? '<br>' . $orders->fields['customers_company'] : ''); ?></td>
                 <td class="dataTableContent text-right" title="<?php echo zen_output_string($product_details, array('"' => '&quot;', "'" => '&#39;', '<br />' => '', '<hr>' => "----\n")); ?>">

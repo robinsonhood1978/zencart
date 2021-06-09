@@ -26,7 +26,7 @@
 <!--eof -gift certificate- send or spend box-->
 
 <h1 id="checkoutSuccessHeading"><?php echo HEADING_TITLE; ?></h1>
-<div id="checkoutSuccessOrderNumber"><?php echo TEXT_YOUR_ORDER_NUMBER . $zv_orders_id; ?></div>
+<div id="checkoutSuccessOrderNumber"><?php echo TEXT_YOUR_ORDER_NUMBER . sprintf("KB%06d", $zv_orders_id); ?></div>
 <?php if (DEFINE_CHECKOUT_SUCCESS_STATUS >= 1 and DEFINE_CHECKOUT_SUCCESS_STATUS <= 2) { ?>
 <div id="checkoutSuccessMainContent" class="content">
 <?php
