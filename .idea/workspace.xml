@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_document_product_info_display.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_document_product_info_display.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_modules_products_all_listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_modules_products_all_listing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_modules_products_featured_listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_modules_products_featured_listing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_modules_products_new_listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_modules_products_new_listing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_product_info_display.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_product_info_display.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/update_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/update_product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/classes/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/functions/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/functions/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/languages/english/modules/payment/dirbankaus.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/modules/payment/dirbankaus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/checkout_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/checkout_process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/info.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +328,21 @@
       <workItem from="1621844048263" duration="3997000" />
       <workItem from="1621986345212" duration="3331000" />
       <workItem from="1622007121343" duration="5636000" />
-      <workItem from="1622368179338" duration="1821000" />
+      <workItem from="1622368179338" duration="7572000" />
+      <workItem from="1623096813756" duration="1444000" />
+      <workItem from="1623098635483" duration="218000" />
+      <workItem from="1623196842009" duration="686000" />
+      <workItem from="1623205819376" duration="1606000" />
+      <workItem from="1623207801117" duration="993000" />
+      <workItem from="1623209633023" duration="802000" />
+      <workItem from="1623365482625" duration="1085000" />
+      <workItem from="1623367297087" duration="1189000" />
+      <workItem from="1623369210544" duration="662000" />
+      <workItem from="1623402953966" duration="396000" />
+      <workItem from="1623405668450" duration="416000" />
+      <workItem from="1623408120504" duration="393000" />
+      <workItem from="1623462502276" duration="1138000" />
+      <workItem from="1623470570924" duration="1365000" />
     </task>
     <servers />
   </component>

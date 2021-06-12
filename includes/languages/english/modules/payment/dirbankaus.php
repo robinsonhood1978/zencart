@@ -32,7 +32,7 @@ $ln=$_SESSION['customer_last_name'];
   "\nAccount Name: " . MODULE_PAYMENT_DIRBANKAUS_ACCNAM . 
   "\nBank Name:    " . MODULE_PAYMENT_DIRBANKAUS_BANKNAM .
   "\nSwift Code:   " . MODULE_PAYMENT_DIRBANKAUS_SWIFT . 
-  "\nReference:    "  . $ln ."-" . $id . "-%s" .
+  "\nReference:    "  . $ln ."-%s" .
   "\n\nSend Cheques/Money Orders To:    " . MODULE_PAYMENT_DIRBANKAUS_ADDRESS . 
   "\nCheques/Money Orders Payable To:   " . MODULE_PAYMENT_DIRBANKAUS_PAYABLE .
   "\n\nThanks for your order which will ship immediately once we receive payment in the above account.\n");
@@ -44,7 +44,7 @@ $ln=$_SESSION['customer_last_name'];
   "\nAccount Name: " . MODULE_PAYMENT_DIRBANKAUS_ACCNAM . 
   "\nBank Name:    " . MODULE_PAYMENT_DIRBANKAUS_BANKNAM .
   "\nSwift Code:   " . MODULE_PAYMENT_DIRBANKAUS_SWIFT . 
-  "\nReference:    "  . $ln ."-" . $id . "-%s" .
+  "\nReference:    "  . $ln ."-%s" .
   "\n\nSend Cheques/Money Orders To:    " . MODULE_PAYMENT_DIRBANKAUS_ADDRESS . 
   "\nCheques/Money Orders Payable To:   " . MODULE_PAYMENT_DIRBANKAUS_PAYABLE .
   '</pre><p>Thanks for your order which will ship immediately once we receive payment in the above account.');

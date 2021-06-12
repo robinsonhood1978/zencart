@@ -93,7 +93,7 @@ $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_PAYMENT_MODULES_BEFOREPROCE
 // create the order record
 $insert_id = $order->create($order_totals, 2);
 $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_ORDER_CREATE');
-$payment_modules->after_order_create($insert_id);
+$payment_modules->after_order_create(sprintf("KB%06d", $insert_id));
 $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_PAYMENT_MODULES_AFTER_ORDER_CREATE');
 // store the product info to the order
 $order->create_add_products($insert_id);
