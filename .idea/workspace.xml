@@ -3,12 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="db225689-ae97-4b0d-a772-5687942a042b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/customers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/customers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/copy_product_confirm.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/copy_product_confirm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/document_product/preview_info.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/document_product/preview_info.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/update_product.php" beforeDir="false" afterPath="$PROJECT_DIR$/Scalp-zzF-Serve/includes/modules/update_product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/classes/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/classes/payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/form_check.js.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/form_check.js.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/functions/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/functions/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/languages/english/modules/payment/dirbankaus.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english/modules/payment/dirbankaus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/modules/checkout_process.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/checkout_process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.php" beforeDir="false" afterPath="$PROJECT_DIR$/info.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/languages/english.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/languages/english.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/create_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/create_account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/account_edit/jscript_form_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/account_edit/jscript_form_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/account_password/jscript_form_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/account_password/jscript_form_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/address_book_process/header_php.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/address_book_process/header_php.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/address_book_process/jscript_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/address_book_process/jscript_main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/checkout_payment_address/jscript_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/checkout_payment_address/jscript_main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/checkout_shipping_address/jscript_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/checkout_shipping_address/jscript_main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/create_account/jscript_form_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/create_account/jscript_form_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/modules/pages/login/jscript_form_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/modules/pages/login/jscript_form_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_modules_products_new_listing.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/responsive_classic/templates/tpl_modules_products_new_listing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_modules_address_book_details.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_modules_address_book_details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_modules_checkout_new_address.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_modules_checkout_new_address.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_modules_create_account.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/templates/template_default/templates/tpl_modules_create_account.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,7 +356,19 @@
       <workItem from="1623405668450" duration="416000" />
       <workItem from="1623408120504" duration="393000" />
       <workItem from="1623462502276" duration="1138000" />
-      <workItem from="1623470570924" duration="1365000" />
+      <workItem from="1623470570924" duration="2441000" />
+      <workItem from="1623528442500" duration="1317000" />
+      <workItem from="1623530274369" duration="528000" />
+      <workItem from="1623541366574" duration="1114000" />
+      <workItem from="1623547765283" duration="516000" />
+      <workItem from="1623617739299" duration="590000" />
+      <workItem from="1623620249838" duration="671000" />
+      <workItem from="1623627048082" duration="1785000" />
+      <workItem from="1623741577679" duration="318000" />
+      <workItem from="1623807227114" duration="1814000" />
+      <workItem from="1623809167216" duration="1700000" />
+      <workItem from="1623811139415" duration="1753000" />
+      <workItem from="1623812958123" duration="1340000" />
     </task>
     <servers />
   </component>

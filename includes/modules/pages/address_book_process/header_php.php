@@ -99,8 +99,8 @@ if (isset($_POST['action']) && (($_POST['action'] == 'process') || ($_POST['acti
   }
 
   if (strlen($city) < ENTRY_CITY_MIN_LENGTH) {
-    $error = true;
-    $messageStack->add('addressbook', ENTRY_CITY_ERROR);
+//    $error = true;
+//    $messageStack->add('addressbook', ENTRY_CITY_ERROR);
   }
 
   if (ACCOUNT_STATE == 'true') {

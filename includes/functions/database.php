@@ -22,6 +22,7 @@
         }
       }
       $query = substr($query, 0, -2) . ')';
+      //echo $query;
     } elseif (strtolower($action) == 'update') {
       $query = 'UPDATE ' . $table . ' SET ';
       foreach($data as $columns => $value) {

@@ -190,8 +190,8 @@ if (isset($_POST['action']) && ($_POST['action'] == 'process')) {
   }
 
   if (strlen($city) < ENTRY_CITY_MIN_LENGTH) {
-    $error = true;
-    $messageStack->add('create_account', ENTRY_CITY_ERROR);
+    //$error = true;
+    //$messageStack->add('create_account', ENTRY_CITY_ERROR);
   }
 
   if (ACCOUNT_STATE == 'true') {

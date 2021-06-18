@@ -166,6 +166,21 @@ $form_action = (isset($_GET['pID'])) ? 'update_product' : 'insert_product';
         echo zen_draw_hidden_field('products_image', stripslashes($products_image_name));
         echo zen_draw_hidden_field('products_image2', stripslashes($products_image_name2));
         echo zen_draw_hidden_field('products_image3', stripslashes($products_image_name3));
+
+        foreach($_FILES as $key=>$value) {
+            if(strpos('#'.$key,'products_image')==0 && $_FILES[$key]['size']!=0){
+                //echo($key.":".$value['tmp_name']);
+                $alldata =file_get_contents($value['tmp_name']);
+                $onedata = explode("\r\n",$alldata);
+                $model_list = implode(",",$onedata);
+                //echo "<br/>";
+                echo zen_draw_hidden_field($key, stripslashes($model_list));
+            }
+            else{
+                // echo $key."<br>";
+            }
+        }
+
         echo ( (isset($_GET['search']) && !empty($_GET['search'])) ? zen_draw_hidden_field('search', $_GET['search']) : '') . ( (isset($_POST['search']) && !empty($_POST['search']) && empty($_GET['search'])) ? zen_draw_hidden_field('search', $_POST['search']) : '');
       ?>
         <button type="submit" name="edit" value="edit" class="btn btn-default"><?php echo IMAGE_BACK; ?></button>

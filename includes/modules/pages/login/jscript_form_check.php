@@ -148,9 +148,7 @@ function check_form(form_name) {
 <?php if ((int)ENTRY_POSTCODE_MIN_LENGTH > 0) { ?>
   check_input("postcode", <?php echo (int)ENTRY_POSTCODE_MIN_LENGTH; ?>, "<?php echo ENTRY_POST_CODE_ERROR; ?>");
 <?php } ?>
-<?php if ((int)ENTRY_CITY_MIN_LENGTH > 0) { ?>
-  check_input("city", <?php echo (int)ENTRY_CITY_MIN_LENGTH; ?>, "<?php echo ENTRY_CITY_ERROR; ?>");
-<?php } ?>
+
 <?php if (ACCOUNT_STATE == 'true') { ?>
   check_state(<?php echo (int)ENTRY_STATE_MIN_LENGTH . ', "' . ENTRY_STATE_ERROR . '", "' . ENTRY_STATE_ERROR_SELECT . '"'; ?>);
 <?php } ?>

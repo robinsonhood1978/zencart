@@ -357,6 +357,8 @@ elseif ((isset($_POST['products_model']) ? $_POST['products_model'] : '') . (iss
 
               }
           }
+//          print_r($_POST);
+//          exit;
           //file
           foreach ($_POST as $key => $value) {
               if (strpos("*#".$key,'#modelb') && strpos($key,'models') && strpos($key,'__file')  ) {

@@ -31,7 +31,7 @@
       }
 
       if (PRODUCT_NEW_LIST_NAME != '0') {
-        $display_products_name = '<div class="itemTitle" style="font-size: 120%;"><a href="' . zen_href_link(zen_get_info_page($products_new->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($products_new->fields['master_categories_id']) . '&products_id=' . $products_new->fields['products_id']) . '">' . $products_new->fields['products_name'] . '</a></div>' . str_repeat('<br />', substr(PRODUCT_NEW_LIST_NAME, 3, 1));
+        $display_products_name = '<div class="itemTitle" style="font-size: 100%;"><a href="' . zen_href_link(zen_get_info_page($products_new->fields['products_id']), 'cPath=' . zen_get_generated_category_path_rev($products_new->fields['master_categories_id']) . '&products_id=' . $products_new->fields['products_id']) . '">' . $products_new->fields['products_name'] . '</a></div>' . str_repeat('<br />', substr(PRODUCT_NEW_LIST_NAME, 3, 1));
       } else {
         $display_products_name = '';
       }

@@ -29,7 +29,6 @@ if (isset($_POST['products_id'], $_POST['categories_id'])) {
             $messageStack->add_session(ERROR_CANNOT_LINK_TO_SAME_CATEGORY, 'error');
         }
     } elseif ($_POST['copy_as'] == 'duplicate') {
-
         $product = $db->Execute("SELECT * 
                              FROM " . TABLE_PRODUCTS . "
                              WHERE products_id = " . $products_id . "
@@ -64,6 +63,9 @@ if (isset($_POST['products_id'], $_POST['categories_id'])) {
           'products_quantity' =>  'float',
           'products_price' =>  'float',
           'products_weight' =>  'float',
+          'products_length' =>  'float',
+          'products_height' =>  'float',
+          'products_width' =>  'float',
           'products_tax_class_id' =>  'int',
           'manufacturers_id' =>  'int',
           'product_is_free' =>  'int',
@@ -101,6 +103,26 @@ if (isset($_POST['products_id'], $_POST['categories_id'])) {
         zen_db_perform(TABLE_PRODUCTS, $sql_data_array);
 
         $dup_products_id = (int)$db->insert_ID();
+
+        $product_ext = $db->Execute("SELECT * FROM " . TABLE_PRODUCTS_EXT . " WHERE products_id = " . $products_id);
+        foreach ($product_ext as $pext) {
+            $db->Execute("INSERT INTO " . TABLE_PRODUCTS_EXT . " (products_id,type_id,condition_id,color_id,products_dimension,products_net_weight,products_handle,
+            products_show_part,products_show_model,products_show_warranty,products_show_disclaimer,capacity,voltage)
+                    VALUES ('" . $dup_products_id . "',
+                            '" . (int)$pext['type_id'] . "',
+                            '" . (int)$pext['condition_id'] . "',
+                            '" . (int)$pext['color_id'] . "',
+                            '" . zen_db_input($pext['products_dimension']) . "',
+                            '" . (float)$pext['products_net_weight'] . "',
+                            '" . (int)$pext['products_handle'] . "',
+                            '" . (int)$pext['products_show_part'] . "',
+                            '" . (int)$pext['products_show_model'] . "',
+                            '" . (int)$pext['products_show_warranty'] . "',
+                            '" . (int)$pext['products_show_disclaimer'] . "',
+                            '" . zen_db_input($pext['capacity']) . "',
+                            '" . zen_db_input($pext['voltage']) . "'
+                            )");
+        }
 
         $descriptions = $db->Execute("SELECT language_id, products_name, products_description, products_url
                                       FROM " . TABLE_PRODUCTS_DESCRIPTION . "

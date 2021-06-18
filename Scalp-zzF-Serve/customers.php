@@ -177,9 +177,16 @@ if (zen_not_null($action)) {
         $entry_post_code_error = false;
       }
 
+        if (strlen($entry_suburb) < 2) {
+            $error = true;
+            $entry_suburb_error = true;
+        } else {
+            $entry_suburb_error = false;
+        }
+
       if (strlen($entry_city) < ENTRY_CITY_MIN_LENGTH) {
-        $error = true;
-        $entry_city_error = true;
+        //$error = true;
+        $entry_city_error = false;
       } else {
         $entry_city_error = false;
       }
@@ -499,8 +506,8 @@ if (zen_not_null($action)) {
             }
 
             if (entry_city == '' || entry_city.length < <?php echo ENTRY_CITY_MIN_LENGTH; ?>) {
-                error_message = error_message + '<?php echo JS_CITY; ?>';
-                error = 1;
+                //error_message = error_message + '<?php //echo JS_CITY; ?>//';
+                //error = 1;
             }
 
   <?php
@@ -775,12 +782,12 @@ if (zen_not_null($action)) {
                   <?php
                   if ($error == true) {
                     if ($entry_suburb_error == true) {
-                      echo zen_draw_input_field('suburb', htmlspecialchars($cInfo->entry_suburb, ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_suburb', 50) . ' class="form-control"') . '&nbsp;' . ENTRY_SUBURB_ERROR;
+                      echo zen_draw_input_field('entry_suburb', htmlspecialchars($cInfo->entry_suburb, ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_suburb', 50) . ' class="form-control"', true) . '&nbsp;' . ENTRY_SUBURB_ERROR;
                     } else {
                       echo $cInfo->entry_suburb . zen_draw_hidden_field('entry_suburb');
                     }
                   } else {
-                    echo zen_draw_input_field('entry_suburb', htmlspecialchars($cInfo->entry_suburb, ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_suburb', 50) . ' class="form-control"');
+                    echo zen_draw_input_field('entry_suburb', htmlspecialchars($cInfo->entry_suburb, ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_suburb', 50) . ' class="form-control"', true);
                   }
                   ?>
               </div>
@@ -814,7 +821,7 @@ if (zen_not_null($action)) {
                     echo $cInfo->entry_city . zen_draw_hidden_field('entry_city');
                   }
                 } else {
-                  echo zen_draw_input_field('entry_city', htmlspecialchars($cInfo->entry_city, ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_city', 50) . ' class="form-control"', true);
+                  echo zen_draw_input_field('entry_city', htmlspecialchars($cInfo->entry_city, ENT_COMPAT, CHARSET, TRUE), zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_city', 50) . ' class="form-control"');
                 }
                 ?></div>
           </div>
